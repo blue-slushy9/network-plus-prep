@@ -1,0 +1,2098 @@
+======== OSI MODEL
+
+-What is the OSI model?
+It is a 7-layer theoretical model for understanding and troubleshooting computers and computer networking.
+
+-What is Layer 1?
+Physical layer, consists of hardware, electrical or light signals; it also encompasses all of the other layers.
+
+-What is Layer 2?
+Data Link Layer, it describes how computers inside of a single LAN or subnet communicate, i.e. using ARP and 
+MAC addresses mainly. Switches live here, unless they are multi-layer/layer 3.
+
+-What is Layer 3?
+Network layer, this allows discrete networks or subnets to communicate with one another. This process is facilitated
+by routers and/or multi-layer switches. This is where IP addresses come into play.
+
+-What is Layer 4?
+Transport layer, this is where TCP/UDP ports live. These ports are used to allow computers to communicate with each other
+on multiple streams simultaneously, e.g. you might request a file from your network file server and ping it at the same time,
+in this scenario you would be using ports 20 and 19 at the same time.
+
+-What is Layer 5?
+Session layer, responsible for initiating, managing, and closing communication sessions between 2+ devices.
+
+-What is Layer 6?
+Presentation layer, responsible for translating data into a format that can be understood by humans.
+
+-What is Layer 7?
+Application layer, closest layer to end users. It is the layer that directly interacts with the actual applications running
+on a machine.
+
+======== DATA ENCAPSULATION
+
+-What is an ethernet header?
+The ethernet header contains information needed in order to route the packet within a LAN, e.g. source MAC, destination MAC,
+File CheckSum, length of packet, etc.
+
+-What is an IP header?
+IP headers contain information needed in order to route a packet between different LANs, e.g. source IP, destination IP,
+version (e.g. IPv4 or IPv6), length, total length, TTL, flags, etc.
+
+-What is a TCP/UDP header?
+TCP headers contain information needed in order to route packets to the correct ports, e.g. source and destination ports,
+sequence number (for when a transmission needs to be broken up into multiple packets), flags (e.g. SYN, ACK, FIN, RST).
+
+In contrast, UDP headers include far less information as it is not a connection-oriented protocol, e.g. source port,
+destination port, length, checksum.
+
+-What are TCP flags?
+TCP flags are used to initiate, manage, control, and terminate connections: SYN is used to initiate a session, SYN/ACK is used to
+agree to the session, ACK is used to acknowledge receipt of packets, FIN is used to signal that the device has finished transmitting and wants to terminate the session, RST is used to reset a session, URG is used to signal that certain data in the packet requires immediate attention, PSH is used to request immediate data delivery to the receiving application.
+
+-What is a payload?
+The actual Layer 7 data that an end user is attempting to transmit, e.g. the actual contents of an email as opposed to all of the surrounding
+information that is needed in order to route the packet, translate the bits, etc.
+
+-What is an MTU?
+Maximum transmission unit, the largest packet (measured in bytes) that can be transmitted over the network; it is 1518 bytes by default,
+but can also be adjusted to allow runt and jumbo packets.
+
+========= CHARACTERISTICS OF NETWORK TOPOLOGIES AND NETWORK TYPES
+
+NETWORK TOPOLOGIES
+
+-What is a mesh network?
+A mesh network is one where every device in the network is directly connected to all other network devices, so that transmissions do not need to pass through a central node to reach the destination; instead, it can be transmitted directly to it.
+
+-What is a star/hub and spoke network?
+Star/HnS networks contain a central node that connects to all of the other endpoints in the network. However, the endpoints do not connect directly to each other, and therefore all data must pass through the central node.
+
+-What is a bus network?s
+A bus network is one in which there is a single cable that runs along the length of the entire network, and where all endpoints connect to this cable and take turns using it to transmit data. Bus networks are half-duplex by nature, ergo they have been largely phased out in favor of full duplex networks, e.g. star or mesh.
+
+-What is a ring network?
+A ring network is one in which endpoints are connected only to the previous and the next endpoint in the topology, forming a ring shape. Data is transmitted in only one direction, and often these networks use a token to control which device is currently allowed to transmit data.
+
+-What is a hybrid network?
+A hybrid network combines characteristics of two or more network topologies, e.g. you might have a star network that also incorporates some connections between endpoints, making it somewhat like a mesh network.
+
+-
+
+NETWORK TYPES
+
+-What is a peer to peer network?
+A P2P network is one in which endpoints are directly connected to each other, e.g. in Limewire users share files amongst themselves instead of downloading from a centralized server.
+
+-What is a client-server network?
+A client-server network is pretty much the standard network type, e.g. a client device such as a laptop requesting a webpage from a webserver owned by Microsoft.
+
+-What is a LAN?
+Local Area Network, describes a SOHO type of network, e.g. your home network or a small business.
+
+-What is a MAN?
+Metropolitan Area Network, describes a network that spans across a few buildings in the same city, e.g. a company that runs its business out of a few buildings such as headquarters and branch offices in the same city.
+
+-What is a WAN?
+Wide Area Network, connections that span across long distance, e.g. an ISP router that connects to another ISP router several miles away, and the next one, and the next one, so that together they span across an entire country, which separate LANs that are very far away from each other to communicate. Because of their nature, WANs can use both public and private infrastructure, as well as different types of hardware and cabling.
+
+-What is a WLAN?
+Wireless LAN, it is a LAN that uses wireless signals instead of cabled connections.
+
+-What is a PAN?
+Personal Area Network, it is a network that is localized to an individual or a few individuals, e.g. a person with an iPhone who is using AirPods has a PAN set up that allows them to listen to music.
+
+-What is a CAN?
+Campus Area Networks span across the length of a college campus, e.g. an actual college, Google headquarters, etc.
+
+-What is a SAN?
+Storage Area Network, special high-speed network that separates storage from servers. The storage is centralized and is block level versus file level (NAS). They usually use fiber connections.
+
+-What is a SDWAN?
+Software-Defined WAN, applies SDN principles to WAN, e.g. centralized control which would allow admins/engineers to shape traffic and implement dynamic routing, load balancing, application visibility (allowing admins to prioritize certain apps over others), cloud integration, and more!
+
+-What is MPLS?
+Multi-Protocol Label Switching, protocol used in WANs to allow packet management using labels. It is fairly similar to VLAN tagging.
+
+-What is mGRE?
+Multipoint Generic Routing Encapsulation, came from GRE which is used to encapsulate many network protocols inside one P2P connection. mGRE expands upon this and allows for multiple endpoints to communicate using a single GRE tunnel.
+
+SERVICE-RELATED ENTRY POINT
+
+-What is a demarcation point?
+A demarc is the physical or logical point in an organization's network where the jurisdiction of the org ends and that of the ISP begins, e.g. the network jack in the MDF that connects the organization's network to its ISP router.
+
+-What is a smartjack?
+A smartjack is a hardware device that can be placed at a demarc that offers features for monitoring the demarc, or even providing power.
+
+VIRTUAL NETWORK CONCEPTS
+
+-What is a vSwitch?
+Virtual switch, does most everything a physical switch does, except it is virtual and lives in a virtual network.
+
+-What is a vNIC?
+Virtual NIC, does everything a NIC does except it is virtual and lives on a VM.
+
+-What is Network function virtualization (NFV)?
+Approach to networking that involves virtualizing traditional network hardware on VMs, e.g. firewalls, load balancers, routers, switches.
+
+-What is a hypervisor?
+A hypervisor is software that allows you to create and run virtual machines, e.g. Hyper-V and VMWare.
+
+PROVIDER LINKS
+
+-Satellite?
+Satellite link uses satellites to transmit/receive data, e.g. Starlink.
+
+-Cable?
+Cable connections use existing cable TV infrastructure for internet access.
+
+-DSL?
+DSL uses traditional copper telephone lines, but in such a way that it doesn't interfere with voice transmission. Contrast with dial-up connections.
+
+-Leased line?
+Connections that are rented from a service provider, offers more privacy and reliability than non-leased lines.
+
+-Metro-optical?
+A fiber connection that is confined to a single metropolitan area.
+
+###### CABLES AND CONNECTORS
+
+COPPER
+
+-Copper cables are used for ethernet, as well as all of the below cable types.
+
+-Twisted pair?
+Copper cables are twisted in order to prevent crosstalk.
+
+-Cat5, 5e?
+"e" stands for "enhanced"; Cat5 can transmit at speeds of up to 100Mbps, Cat5e can transmit at speeds of up to 1000Mbps which is 1Gbps. Cat5 is more susceptible to crosstalk and signal loss, which 5e sought to fix. Both are backwards compatible.
+
+-Cat6, 6a?
+"a" stands for "augmented"; 6 can support 1 Gbps, 6a can support up to 10 Gbps. 6 are usually UTP, 6a are usually STP. 6 is for up to 55 meters, 6a is for up to 100 meters. 
+
+-Cat7?
+Support speeds of up to 10 Gbps over up to 100 meters, often use STP. Usually overlooked in favor of fiber, GG45 connector?
+
+-Cat8?
+Mostly used in data centers, server rooms, etc. Support up to 25-40 Gbps, use STP and multiple layers of shielding, GG45 connector.
+
+-Coaxial/RG-6?
+These are the same thing; used for TV, internet, comms systems. Not suitable for high-speed data transfer, such as ethernet. 
+
+-Twinaxial?
+Used for transmitting high-freq electrical signals over short distances.
+
+-Termination standards (TIA/EIA 568A & B)?
+Standards for the wiring of ethernet cables, particularly TP. They specify the pin assignments and color coding for individual wires in an ethernet cable. You cannot use both in a single cable run, they must match.
+
+A
+
+White/Green
+Green
+White/Orange
+Blue
+White/Blue
+Orange
+White/Brown
+Brown
+
+B
+
+White/Orange
+Orange
+White/Green
+Blue
+White/Blue
+Green
+White/Brown
+Brown
+
+FIBER
+
+-Single mode?
+Used for long-range connections, this type of fiber cable only supports one mode of light.
+
+-Multi-mode?
+Used for short range connections, this type of fiber cable supports multiple modes of light. 
+
+CONNECTOR TYPES
+
+-Local connector (LC)?
+Fiber connector, has two different fibers: send and receive. 
+
+-Straight tip (ST)?
+Larger than LC and SC, bayonet-style locking mechanism, larger than other fiber connectors, has been phased out.
+
+-Subscriber connector (SC)?
+Push-pull design, square tip, SMF and MMF support.
+
+-Mechanical transfer (MT)?
+Allows for multiple fiber connections within a single connector, up to 48+. Popular in high-speed data centers.
+
+-Registered jack (RJ)?
+Commonly used in both telecomms and computer networking, most popular connectors are 11 and 45. 11 is used for connecting to analog phone systems, and 45 is used for ethernet. 45 has 8 pins and it usually used with TP cables. RJ45 cables are often referred to as "patch cables". These are NOT COMPATIBLE.
+
+-Angled physical contact (APC)?
+Designed to minimize the amount of "back reflection" or "return loss"; ergo commonly used in long range connections, high speed networks, etc.
+
+-Ultra physical contact (UPC)?
+Designed for precise and low-loss connections, used in LANs, FTTH, etc.
+
+-RJ11?
+Primarily used to connect analog telephone devices, e.g. phones, fax, modems to the telephone network.
+
+-RJ45?
+45 is used for ethernet. 45 has 8 pins and it usually used with TP cables. RJ45 cables are often referred to as "patch cables".
+
+-F type?
+Stands for "frequency", a coax connector that is used to connect to TVs, modems, satellite receivers, etc.
+
+-Transceivers/media converters?
+A transceiver is a transmitter and receiver in the same device, it can sometimes be a media converter, e.g. it receives optical signals but transmits electrical signals.
+
+A media converter is used to convert signals from one format to another, e.g. fiber to ethernet.
+
+TRANSCEIVER TYPE
+
+-Small form-factor pluggable (SFP)?
+Hot-swappable, modular transceiver used to allow devices to connect to network devices. SFP devices can be used to allow connectivity to copper or fiber networks. Connector types include LC and RJ45, the modularity of the SFP makes it flexible and adaptable to many different uses and network types.
+
+-Enhanced form-factor pluggable (SFP+)?
+Designed to support higher data rates, they are backwards compatible. Optical transceivers can be SR, LR, ER, and more. They have become the standard in data centers, cloud environments, etc.
+
+-Quad small form-factor pluggable (QSPF)?
+"Quad" refers to the four separate channels that this type of transceiver supports. Comes in many different form factors (data rates). 
+
+-Enhanced quad small form-factor pluggable (QSFP+)?
+Higher data rates and better performance than QSFP, but is backwards compatible. 
+
+CABLE MANAGEMENT
+
+-Patch panel/bay?
+A panel used in data centers, server rooms, etc. to facilitate the connection of COPPER cables to their respective endpoints.
+
+-Fiber distribution panel?
+Fiber equivalent of a patch panel.
+
+-Punchdown block?
+Hardware used to terminate and organize twisted pair cables.
+
+-66?
+Older type, used in phone systems.
+
+-110?
+Newer, used for computer networking and telecomms.
+
+-Krone?
+A brand of punchdown blocks, can be 66 or 110.
+
+-Bix?
+A different type of PDB, made by company 3M.
+
+ETHERNET STANDARDS
+
+-Baseband?
+Baseband is a mode of data transmission that does not require modulation, i.e. converting a signal from one type to another. For instance, a modem is a networking device that converts digital signals (which is what computers use) to analog (e.g. telephone) in order to transmit computer data over telephone infrastructure. Baseband also uses the entire bandwidth for a single channel, whereas broadband uses the bandwidth for multiple channels.
+
+COPPER
+
+-10Base-T?
+One of the original Ethernet standards defined in 802.3; "10" means 10 Mbps, "Base" means baseband transmission, and "T" means twisted pair.
+
+-100Base-TX?
+Ethernet standard, 100 Mbps, uses CAT5 and higher cables, RJ45 connectors, star topology, full duplex.
+
+-1000Base-T?
+1000 Mbps = 1 Gbps, Gigabit Ethernet, baseband, uses TP cables, CAT5e or higher cables with RJ45, uses all four pairs of wires in cable, 
+
+-10GBase-T?
+10 Gbps, 10G Ethernet, CAT6a and above, TP; cons include high power requirements and signal degradation over long distances. 
+
+-40GBase-T?
+40 Gbps, 40G ethernet, CAT8 and above, TP; max transmission distance is 30 meters. 
+
+FIBER
+
+-100Base-FX?
+Fast ethernet, 100 Mbps, "FX" means fiber optic, SC or ST connectors.
+
+-100Base-SX?
+Fast ethernet, 100 Mbps, "SX" means short wavelength multi-mode fiber, SC or ST connectors, max length is 900 feet.
+
+-1000Base-SX?
+Gigabit ethernet, 1000 Mbps, "SX" means short wavelength multi-mode fiber, SC or LC connectors, max length is 1800 feet.
+
+-1000Base-LX?
+Gigabit ethernet, 1000 Mbps, "LX" means long wavelength for SMF or MMF, up to 6.2 miles with SMF, up to 1800 feet with MMF. 
+
+-10GBase-SR?
+10G ethernet, 10 Gbps, "SR" means short range and MMF, short wavelength optical signals, usually uses LC, max length about 984 feet using OM3 fiber, and 1312 feet using OM4 fiber.
+
+-10GBase-LR?
+10G ethernet, 10 Gbps, "LR" means long range and SMF, long wavelength optical signals, usually uses LC connectors, max length is about 6.2 miles.
+
+-Coarse wavelength division multiplexing (CWDM)?
+Allows for transmitting multiple data channels over a single cable by using different wavelengths of light (colors), used for shorter distances (e.g. MAN) and lower capacity requirements.
+
+-Dense wavelength division multiplexing (DWDM)?
+As its name suggests, the different wavelengths of light are closer together, high capacity, can support 80-100 channels in a single cable, can transmit over hundreds or thousands of miles, protocol agnostic.
+
+-Bidirectional wavelength division multiplexing (WDM)?
+Allows for the simultaneous bidirectional transmission (send/receive) of optical signals on a single fiber using two different wavelengths of light. Traditional WDM only allows for unidirectional transmission or reception over a single fiber.
+
+######## IP ADDRESSING
+
+PUBLIC AND PRIVATE 
+
+-RFC1918?
+"Address allocation for private internets", defines three ranges of IP addresses for use in private networks:
+10.x.x.x
+172.16.x.x - 172.31.x.x
+192.168.x.x
+
+-NAT?
+Network address translation, protocol that converts public IP addresses into private ones, and vice-versa. 
+
+-PAT?
+Port address translation, component of NAT, uses Layer 4 port numbers to keep track of which host in the internal network should receive which packets. This is because the entire internal network uses a single IP address, ergo PAT is used to keep track of which packets go to which host in the network.
+
+IPv4 vs IPv6
+
+-Automatic Private IP?
+Feature of MS windows, it is an address in the 169.254.x.x/16 range that gets assigned to a DHCP client when it can't reach the DHCP server. APIPA provides local connectivity, but no internet access.
+
+-EUI-64?
+Extended Unique Identifier-64, used in IPv6 networks to create interface IDs for network devices based on their MAC address, especially in SLAAC. 
+
+-Multicast?
+A mode of packet delivery that entails sending the same data from one source to multiple destination.
+
+-Unicast?
+A mode of packet delivery that entails sending data from one source to one destination.
+
+-Anycast?
+A mode of packet delivery that involves sending data from one source to one destination IP address, however in Anycast multiple endpoints are configured with the same IP address and the actual destination is based upon geographic proximity to the source. Example: Amazon.com might have hundreds of webservers configured with the same IP address, which webserver actually receives and serves requests is based on the location of the client.
+
+-Broadcast?
+Unlike the other modes of communication, broadcast only exists in IPv4 and not IPv6. This is because it requires a lot of overhead, which the engineers behind IPv6 did not want included. Broadcast traffic involves sending the same data from one source to every other endpoint on the same subnet.
+
+-Link local?
+IPv6 feature, it is an address that gets assigned automatically to all devices in a subnet. It is used only for communicating within that same subnet. The address is often generated by individual devices, in a non-centralized manner, using SLAAC.
+
+-Loopback?
+Loopback address in IPv4 is 127.0.0.1. It always points to the localhost, it is often used for testing connectivity issues while bypassing the physical layer. In IPv6, the address is ::1.
+
+-Default gateway?
+This is the IP address of the router or multilayer switch interface that faces the internal network/subnet. It is the gateway to other networks, including the internet, hence the name.
+
+IPv4 SUBNETTING
+
+-Classless (VLSM)?
+Classless routing simply means it does not use classful routing, which assigns subnet mask based on the value of the first byte in the IP address. Variable length subnet masking means the same thing, the subnet mask is not determined by IP address range.
+
+-Classful?
+*With the exception of the private IP address ranges:
+A = 1.0.0.0 - 126.0.0.0, /8
+B = 128.0.0.0 - 191.255.0.0, /16
+C = 192.0.0.0 - 223.255.255.0, /24
+D = Multicast group addressing = 224.0.0.0 - 239.255.255.255
+E = Experimental use = 240.0.0.0 - 255.255.255.255
+
+-CIDR?
+Classless Inter-Domain Routing, more efficient subnet mask notation than standard decimal or binary notation. It used a slash followed by the number of 1s in your subnet mask, e.g. /8 = 255.0.0.0 = 11111111.0.0.0
+
+IPv6 CONCEPTS
+
+-Tunneling?
+Process of encapsulating IPv6 packets inside of other protocols (e.g. IPv4) in order to transmit IPv6 packets over networks that may not natively support it.
+
+-Dual stack?
+Simultaneous use of both IPv4 and IPv6 in the same network and/or devices. Devices have both v4 and v6 addresses, apps running on the network can work with both v4 and v6, etc.
+
+-Shorthand notation?
+Leading zeros can be omitted, both within the 16-bit blocks and the entire IPv6 address, e.g. "2001:0db8" is also "2001:db8". A single set of consecutive blocks of zeros can be shortened to "::", e.g. "2001:0000:0000:0000:2022:EFFBAB" = "2001::2022:EFFBAB". A single block of zeros can be shortened to just one zero, e.g. "0000" = "0". 
+
+-Router advertisement?
+Component of NDP, neighbor discovery protocol. Responsible for stateless autoconfiguration, address resolution, duplicate address detection, etc.
+
+-SLAAC?
+StateLess Address AutoConfiguration, replacement for DHCPv6. Allows devices on IPv6 networks to configure their IP addressing without a centralized (e.g. DHCP) service.
+
+-Virtual IP (VIP)?
+Associated with a service or resource that lives in the network, rather than a host. This is done for load balancing and network management purposes. 
+
+-Sub-interface?
+An interface on a router or switch configured as part of a VLAN. It is associated with a physical interface on the network device, and relies upon it being up and operational, but it is not the same thing as the physical interface, i.e. the physical interface and its subinterface(s) do not belong to the same (V)LANs. 
+
+##### PORTS AND PROTOCOLS
+
+-FTP?
+File Transfer Protocol, TCP port 20/21 (20 is used for control, 21 is used for data) used for sending/receiving files, usually from a fileserver. Can also be from just any host to another, still using client-server architecture. Insecure because it transmits in plaintext.
+
+-SSH?
+Secure SHell, TCP port 22, used for remote terminal connections. This is the gold standard of remote terminal connection protocols and many other protocols rely on it for their secure communications.
+
+-SFTP?
+Secure/SSH File Transfer Protocol, uses SSH for secure connections. SFTP uses port 22 only, making it easier on firewalls than FTP (which uses 20 and 21).
+
+-Telnet?
+Remote terminal connection protocol, TCP port 23, vastly insecure because it transmits everything in plaintext.
+
+-SMTP?
+Simple Mail Transfer Protocol, TCP port 25, used for transmitting emails. Uses client-server architecture, where the client is the sender's email client or server and the server is the destination mail server. Sends emails between clients and relays emails between different email servers. This protocol is NOT used for retrieving emails from the inbox/mailserver.
+
+-DNS?
+Domain Name System, TCP port 53, used mainly for resolving domain names to IP addresses but can also be used for other things, e.g. resolving IP addresses to domain names.
+
+-DHCP?
+Dynamic Host Configuration Protocol, UDP port 67/68, used for automatically assigning IP addressing information to all of the DHCP server's clients. Port 67 is used by the DHCP server to listen for incoming requests, port 68 is used by DHCP clients to listen for responses from the DHCP server.
+
+-TFTP?
+Trivial File Transfer Protocol, TCP port 69, used for transferring smaller files than FTP. It is not very secure, so should not be used to transmit sensitive information. It is often used to transfer router/switch configuration files across a network, etc.
+
+-HTTP?
+HyperText Tranfer Protocol, TCP port 80, used for requesting and sending HTML files, i.e. webpages. This is a vastly insecure protocol as it transmits everything in plaintext, it was replaced by HTTPS.
+
+-POP3?
+Post Office Protocol 3, TCP port 110, used for retrieving emails from the mail server to the mail client. 
+
+-NTP?
+Network Time Protocol, TCP port 123, used to keep date and time settings on network devices in sync.
+
+-IMAP?
+Internet Message Access Protocol, TCP port 143, used for accessing and managing email messages stored on a remote mail server. It is more advanced than POP3, it has more features for managing email.
+
+-SNMP?
+Simple Network Management Protocol, UDP port 161/162, 161 is used by SNMP clients to listen for instructions from the SNMP server, 162 is used by the SNMP manager to listen for incoming traps. SNMP is used for managing and monitoring network devices from a SNMP manager (management systems).
+
+-LDAP?
+Lightweight Directory Access Protocol, TCP port 389, used for directory services, i.e. a centralized database that stores information about users, groups, devices, and other resources in a network or organization. In particular, LDAP is designed for querying and modifying directory information. LDAP uses client-server architecture. EXAMPLE: Microsoft Active Directory uses LDAP.
+
+-HTTPS?
+HTTP Secure, TCP port 443, uses SSL/TLS to encrypt traffic; like HTTP it is used for transmitting HTML files, i.e. webpages. 
+
+-SMB?
+Server Message Block, TCP port 445, used for file, printer, and resource sharing on LANs. Doesn't just run on Windows, it also works for other OSes. 
+
+-Syslog?
+Protocol for aggregating and managing network logs, uses TCP port 514, it receives logs from all network devices and stores them in a central location (Syslog server).
+
+-SMTP TLS?
+TLS version of SMTP, uses TCP port 587; adds authentication, encryption, and data integrity to standard SMTP. Please note that only the traffic between mail servers is encrypted, for full end-to-end encryption you can use PGP, etc.
+
+-LDAPS?
+LDAP over SSL, TCP port 636, uses encryption and digital certificates. Enhances security be encrypting data sent between LDAP client and server, uses encryption, authentication, and certificates.
+
+-IMAPS?
+IMAP over SSL, uses TCP port 993, adds encryption and authentication to IMAP.
+
+-POP3S?
+POP3 over SSL, uses TCP port 995, adds encryption and authentication to POP3. Less commonly used than IMAPS.
+
+-SQL Server?
+Structured Query Language, uses TCP port 1433, relation database management system (RDBMS) developed by Microsoft. Stores, manages, and retrieves data as requested by apps and services. 
+
+-SQLnet?
+Aka Oracle Net, uses TCP port 1521, enables communication between Oracle SQL servers and clients. Uses authentication and encryption.
+
+-MySQL?
+Uses TCP port 3306, open source RDBMS developed by Oracle. Uses authentication, access control, encryption, designed to handle both small and large datasets. It is cross-platform.
+
+-RDP?
+Remote Desktop Protocol, uses TCP port 3389, used for remote desktop connections to Windows machines. There are clients for other operating systems, but they are still used to connect to Windows machines as their only targets.
+
+-SIP?
+Session Initiation Protocol, uses TCP port 5060/5061. 5060 is used for unencrypted communication, 5061 is used to add encryption. SIP initiates, manages, and ends sessions, e.g. VoIP.
+
+IP PROTOCOL TYPES
+
+-ICMP?
+Internet Control Message Protocol, doesn't use a TCP port because it is a protocol that lives in the lower levels of the OSI model. ICMP is most commonly used with the 'ping' command to test network connectivity and interface status of network devices. More widely, it is used for network diagnostics and troubleshooting.
+
+-TCP?
+Connection-oriented protocol, three-way handshake, uses port numbers assigned to specific protocols and communication channels. TCP is used when a reliable connection is needed, e.g. when sending important information which you want to make sure will be received.
+
+-UDP?
+Connectionless protocol, used when speed is more important than reliability, e.g. on a video call. Some packets will not reach the destination, but since it's a video chat, it will just pick up from the next packet from the one that got lost.
+
+-GRE?
+Generic Routing Encapsulation, allows for transmitting multiple data streams and/or protocols over a single channel.
+
+-IPSec?
+Suite of protocols used to secure communication over IP networks, namely the internet. Examples: VPNs, Transport mode (encrypt only the payload), Tunnel mode (encrypt entire packet); Protocols: AH, ESP. Many IPsec implementations use both AH and ESP (see below).
+
+-AH/ESP?
+Authentication Header/Encapsulating Security Payload. AH provides authentication and data integrity for IP packets, no encryption. ESP provides encryption and data confidentiality. 
+
+-Connectionless vs Connection-Oriented Protocols?
+Connectionless protocols use UDP ports, connection-oriented protocols use TCP ports. Connectionless protocols are favored when speed is more important than reliability, e.g. video calls. It doesn't matter if a few packets in the video call session get dropped, the video and audio will still be more than comprehensible.
+
+###### NETWORK SERVICES
+
+DHCP
+
+-Scope?
+DHCP scope defines the range of IP addresses that will be served by the DHCP server, e.g. 192.168.0.0 - 192.168.255.255.
+
+-Exclusion ranges?
+These are IP address ranges within a scope that will NOT be served by the DHCP server.
+
+-Reservation?
+These are specific IP addresses that are set aside for specific hosts, based on its MAC address.
+
+-Dynamic assignment?
+This is when DHCP is used for IP addressing, it's called dynamic because the address leases expire after a certain amount of time and have to be renewed. Ergo dynamic IP addresses are not permanent.
+
+-Static assignment?
+This is when IP addressing is NOT configured with DHCP, rather it is done manually or with a script. In any case, these addresses do not expire on their own, which makes static assignment useful for configuring IP addressing on servers and other key network devices.
+
+-Lease time?
+This is the amount of time that DHCP clients will retain their IP addressing that was assigned by the DHCP server. The default lease time is around 8 days, although it depends on the DHCP server configuration.
+
+-Scope options?
+Other settings that the DHCP server provides to its clients that aren't just IP address, e.g. subnet mask, default gateway, DNS server, domain name, and much more.
+
+-Available leases?
+DHCP IP addresses that are available.
+
+-DHCP relay?
+Usually a router, can also be a network service, it intercepts DHCP Discover broadcasts and forwards it to the DHCP server as a unicast transmission. This is necessary because by default routers filter broadcasts and confine them to their respective subnets, so if DHCP relay isn't configured then probably most network devices would not be able to acquire IP addressing information via DHCP.
+
+-IP helper/UDP forwarding?
+Similar to DHCP relay, but can be used for other protocols other than DHCP. However, it only works for UDP protocols.
+
+DNS
+
+Record Types
+
+-A vs AAAA?
+A records are the most basic DNS record, they map domain names to IP addresses. AAAA records map domain names to IPv6 addresses.
+
+-CNAME?
+These are alias records, they redirect one domain name to another.
+
+-MX?
+Mail records, these point the mail servers of a given domain.
+
+-SOA?
+Start of Authority, these contain administrative information about the domain, e.g. the admin, their email, etc.
+
+-PTR?
+These map IP addresses to names, you can think of them as reverse A records.
+
+-TXT?
+These provide additional information about the domain, such as the services running on it or details about the configuration of the domain. Often used to provide information about DKIM, SPF, DMARC, etc.
+
+-SRV?
+Service records, these contain information about services running in the domain, e.g. service name, protocol, port, priority, etc.
+
+-NS?
+Name Server record, this point to the DNS servers that serve the domain.
+
+GLOBAL HIERARCHY
+
+-Root DNS servers?
+These are the uppermost DNS servers in the DNS architecture, which relies on delegation for most name resolution on the internet. There are about 13 root DNS servers that serve the entire world, maintained by various technological organizations. In turn, these point to lower-level DNS servers that serve particular subdomains of the internet, e.g. '.com' or '.net'.
+
+-Internal vs External DNS?
+Internal DNS does not require delegation because the network DNS server is the one that holds the records for the domain, i.e. the authoritative DNS server resides on the domain. External DNS, which resolves names to IP addresses on the global internet, does rely on delegation to root DNS servers because the authoritative DNS server resides outside of the source's domain. Therefore communication with several other DNS servers is usually necessary to resolve a name.
+
+-Zone transfer?
+A DNS zone is similar to a DHCP scope, it describes the configuration of the domain as a whole. Ergo, a zone transfer entails passing along the entire DNS configuration of a domain, usually from the authoritative DNS server to a secondary DNS server. 
+-Authoritative Name Server?
+The name server that is considered to hold the official DNS records for a zone/domain. DNS records and/or configuration can only be changed from the authoritative server.
+
+-TTL?
+Every DNS record has a time to live, which tells the DNS server or host how long that information will remain valid. After it has expired, the server or host can then submit another query.
+
+-DNS cache?
+One of the foundational principles of DNS is that every host is ultimately responsible for its own name resolution, even if it often needs to delegate this process to one or more DNS servers. As such, every host also has its own DNS cache, which is used to expedite the process of name resolution in the case that the particular domain name is one with which communication occurs often. Unfortunately, the cache can also cause connection issues if the DNS information in the cache is outdate, which is why the cache has a TTL or can be flushed manually.
+
+-Reverse DNS/reverse lookup?
+Just what it sounds like, instead of resolving a name to an IP address, reverse lookup resolves an IP address to a name.
+
+-Forward DNS/forward lookup?
+Standard DNS lookup, resolving a name to an IP address.
+
+-Recursive/iterative lookup?
+Recursion is the process of delegating a DNS query to a DNS server, be that the local DNS server or the root servers that serve the entire world. The DNS client does not actually get involved in the process.
+
+Iterative lookup is when the DNS server simply points the client in the direction of the DNS server(s) that will help them resolve the name they are attempting to reach.
+
+NTP
+
+-Stratum?
+Strata are hierarchies in NTP that are assigned to timekeeping devices to denote their level of accuracy and proximity to a time source, e.g. stratum 0 devices are the most accurate, a stratum 3 device or program would be considered significantly less accurate.
+
+-Clients?
+NTP clients are devices that sync their internal clocks up with an external timekeeping device or program.
+
+-Servers?
+NTP servers have synchronized their own clocks with highly accurate sources, such as atomic clocks or GPS satellites.
+
+BASIC CORPORATE AND DATA CENTER NETWORK ARCHITECTURE
+
+THREE-TIERED
+
+-Core?
+One of three primary layers, aka backbone, central park of network infrastructure. Primary function is to provide high-speed connectivity to entire network. Probably includes high-speed switches, routers, and fiber connections. Common protocols include BGP and MPLS.  
+
+-Distribution/aggregation layer?
+Connects core layer to the access layer, it is an intermediary. Connects multiple access layer segments to core layer, aggregating traffic from multiple access-layer devices and routing toward destination. Routing and filtering, VLAN support, aggregation of WAN connections. Protocols include OSPF, EIGRP, etc.
+
+-Access/edge?
+Connects end-user devices to the network, called edge because endpoints are usually located there. VLANs, security and access control; connects to distribution layer. Uplinks or trunklinks are used to aggregate access-layer switch and then carry it to distribution layer. Low latency is a must.
+
+SOFTWARE-DEFINED NETWORKING
+
+-Application layer?
+Closest to administrators, application layer is where the programs that allow humans to give instructions to the control layer run. SDN apps interact with SDN controller through APIs. 
+
+-Control layer?
+Seat of the SDN controller, this layer tells the infrastructure how to route and manage traffic. The SDN controller translates high-level instructions from App Layer to low-level instructions to be executed at this level. Communicates with infrastructure devices through southbound APIs to manage the network.
+
+-Infrastructure layer?
+This is where the physical equipment lives, e.g. routers, switches, cables.
+
+-Management plane?
+One of three planes, including control and data planes. This plane is responsible for overall management, configuration, monitoring, maintenance, etc. of the SDN architecture. Often involves human administrators who interact with the SDN controller. Security rules, such as ACLs and firewalls, are configured on this plane; also software/firmware updates and patches.
+
+SPINE AND LEAF
+
+-Software-defined networking?
+SDN is an improvement on traditional network infrastructure because it centralizes management of networking devices into an SDN controller. SDN applications are used by administrators to pass instructions to the controller, which then enforces the configuration on all networking devices. 
+
+-Top-of-rack switching?
+ToR, network design that involves placing physical switches at the top of each cabinet or rack of servers in the data center. Advantages include: proximity to servers, ease of switch management, cost efficiency, easier cable management, etc. May not be suitable for all datacenter environments. 
+
+-Backbone?
+Core of the network, connects the various disparate segments and allows them to communicate. Must have high capacity, many connections, high-power networking equipment. Also security, e.g. firewalls, ACLs.
+
+TRAFFIC FLOWS
+
+-North-South?
+Describes data flowing between different networks, e.g. a datacenter granting access to their network to an authenticated user.
+
+East-West?
+Describes data that flows between devices on the same network, e.g. a datacenter has to communicate with another datacenter owned by the same company.
+
+Branch office vs On-premises?
+A branch office is an extension of the headquarters of an organization. It will not contain the exact same equipment as the headquarters, but it will provide access to the network and have some data needed to run the branch office operations.
+
+On-premises, or headquarters, will store a lot more data, have a better network infrastructure as it needs to communicate with all branch offices, and have many more people physically working there, probably with better security.
+
+-Datacenter vs Colocation?
+Datacenters can be owned outright or the space can be rented out, but the organization is responsible for the equipments, maintenance, power, HVAC, etc.
+
+Colocations are owned by a third-party provider and are rented out, including the space, power, HVAC, and network connectivity. Different organizations rent under the same roof, and each organization then becomes responsible for any additional equipment they need to install.
+
+STORAGE AREA NETWORKS (SAN)
+
+CONNECTION TYPES
+
+-Fiber channel over ethernet (FCoE)?
+These are Fiber Channel frames encapsulated inside of Ethernet frames. Relies on CNAs, Converged Networks Adapaters, which support both Ethernet and FC protocols. They can also encapsulate in the other direction. Conventional ethernet switches can support FCoE if they in turn support DCB.
+
+-Fibre channel?
+Primarily used in SANs and data centers, designed for fast and reliable connections. Uses FC switches, supports zoning, supports virtualization. Does not use IP!
+
+-Internet Small Computer Systems Interface (iSCSI)?
+Network protocol that facilitates block-level data transfer across a network. Allows a host to connect to a remote storage device, e.g. disk arrays, storage servers, or a NAS system. There are initiator and target systems, supports authentication and security, commonly used in virtualization environments. More cost-effective and easier to implement than FC, however it probably cannot match FC performance.
+
+SUMMARIZE CLOUD CONCEPTS AND CONNECTIVITY OPTIONS
+
+DEPLOYMENT MODELS
+
+-Public?
+Examples: Azure, AWS. The equipment is owned by the provider and can be rented out by anyone who wants to pay and meets requirements. 
+
+-Private?
+All network infrastructure is owned and managed by a single organzation, e.g. routers, switches, servers, storage. Can be managed by the organization's IT department or to a cloud service provider.
+
+-Hybrid?
+Combines elements of public and private cloud architectures.
+
+-Community?
+Rented out from a provider to a group of organizations, usually sharing some common goal or mission. 
+
+SERVICE MODELS
+
+-Software as a Service (SaaS)?
+This model entails offering only the software to clients, which means the infrastructure and platform are owned and managed by the service provider, e.g. ChatGPT is a web app that is accessed through a browser.
+
+-Infrastructure as a Service (IaaS)?
+Infrastructure refers to the physical equipment that runs networks, e.g. routers, switches, servers, storage. The client rents out the infrastructure and then configures and maintains it. Example: Azure with Virtual Machines.
+
+-Platform as a Service (PaaS)?
+This model entails providing a ready-to-go platform for software development. The developers will have everything they need to start building their apps, which saves them the time and effort involved in configuring their own development environments. Example: Heroku.
+
+-Desktop as a Service (DaaS)?
+This model entails hosting virtual desktops on service-provider infrastructure and then allowing end users from a client organization to connect to them and use them. This saves organizations money and time which they would otherwise have to spend on acquiring, configuring, and maintaining the equipment.
+
+INFRASTRUCTURE AS CODE
+
+-Automation/orchestration?
+Process of deploying, managing, and scaling infrastructure and services using code and scripts.
+
+CONNECTIVITY OPTIONS
+
+-Virtual private network (VPN)?
+An app that creates a secure tunnel between the endpoint on which it is run and the destination. The traffic is routed through a VPN server. In an enterprise setting, it is often used to provide remote access to the organization's network.
+
+-Private-direct connection to cloud provider?
+A dedicated network link that connects a client's on-premises architecture directly to a cloud provider's data center.
+
+-Multitenancy?
+Model that allows a single instance of a software application to serve multiple customers or tenants. Clients/tenants share the same infrastructure, e.g. servers, network devices, storage; however they are logically isolated from one another.
+
+-Elasticity?
+Usually used in cloud computing, refers to the property of a given technology to be scaled up or down to meet shifting business demand. Examples: on-premises infrastructure is not very elastic, whereas cloud infrastructure is highly elastic.
+
+-Scalability?
+Refers to the ability of a particular technology or approach in IT to be implemented multiple times in order to expand operations. Example: cloud is generally highly scalabale, because all you have to do is go on the cloud management console and pay the extra money required to expand your cloud infrastructure or access.
+
+-Security implications?
+This is a hotly debated topic, however the consensus seems to be that as long as the cloud provider is of good repute (e.g. Microsoft, Amazon), security should be comparable to hosting your data on-premises. It could also depend on what level of service you are subscribed to, e.g. SaaS entails the provider managing most of the underlying security, whereas IaaS could require a higher level of involvement on the part of client re. security.
+
+COMPARE AND CONTRAST NETWORKING DEVICES
+
+NETWORKING DEVICES
+
+-Layer 2 switch?
+Traditional switch, routes packets within a LAN/subnet. Each switchport creates a separate collision domain. This switch keeps an ARP table that maps IP addresses to MAC addresses; it can forward, flood, or filter packets. If it receives a broadcast, it will flood it; only routers and L3 switches drop broadcast packets.
+
+-Layer 3 capable switch?
+Newer type of switch, is able to route IP traffic like a router does, including between VLANs. Still has all the functionality of a layer 2 switch, but with more features. These switches are usually configured to drop broadcast packets, just like layer 2 switches.
+
+-Router?
+Routers route traffic between different LANs/subnets/VLANs. They create separate collision and broadcast domains at every interface. They can be configured to use VLANs and subinterfaces, they can also be configured with various routing protocols, e.g. RIP, OSPF. They keep routing tables for routing to different networks, and ARP tables to route within their own networks.
+
+-Hub?
+Hubs are simple layer 1 devices that can be thought of simply as bit repeaters. Every packet they receive into one interface they then transmit out of all of their other interfaces.
+
+-Access point?
+Wireless Access Point, it is a device (often a router) with a cabled connection to a network that allows endpoints to connect to it wirelessly for their own internet/intranet access. In 2023, WAPs should be using WPA2 or WPA3 for security. They broadcast their SSIDs so that end users will be able to identify them. 
+
+-Bridge?
+A network bridge is an extender or connector between different network segments. Can be a device or software, can also be wired or wireless. Whereas routers separate network segments, bridges connect separate network segments as if they were a single segment. Bridges filter or forward traffic based on MAC addresses. 
+
+-WLAN controller?
+Centralized networking device that controls multiple WAPs in a WLAN. WAPs can be configured with addressing information, security policies, authentication encryption, SSIDs, firmware, etc. all by using the controller.
+
+-Load balancer?
+Device or software that is responsible for distributing traffic loads across networking devices as evenly and efficiently as possible. Essential component of cloud and data center architectures.
+
+-Proxy server?
+This is a server through which traffic from and for another endpoint is channeled. Proxy servers are for various purposes, including security ( e.g. IP masking, encrypted tunneling, content filtering. Other purposes include improved performance (load balancing), anonymity, and access control. Example: the proxy might make a web request to an external webserver on behalf of a client, but it might make changes to the request packet before it does, e.g. caching content, filtering content, adding security headers. Primary types are forward proxy and reverse proxy.
+
+-Cable modem?
+AKA DOCSIS modem. Modems are used to modulate (convert) signals from digital to analog (telephone), and vice-versa, in order to allow end users to access the internet using, in this case, cable TV infrastructure.
+
+-DSL modem?
+Digital subscriber line, this type of modem is used for transmitting digital signals over telephone lines, which is why it is so much faster than dial-up, which transmits analog signals. Unlike dial-up, DSL allows for both voice and data to be transmitted/received simultaneously, using filters/splitters to separate the signals. Dial-up only allows users to transmit voice or data, but not both. DSL also uses technologies such as advanced modulation and FDM to achieve its higher speeds. 
+
+-Repeater?
+Layer 1 devices, these are used to extend the reach of a network by amplifying or regenerating signals. Can be wired or wireless, can introduce some latency as amplification/regeneration can take some time.
+
+-Voice gateway?
+Networking device that serves as an interface between traditional analog or digital telephone networks (e.g. PSTN) and IP-based networks (e.g. VoIP). They convert and transmit the signals so that these different types of networks can communicate with each other.
+
+-Media converter?
+Device used to convert signals from one format to another, typically fiber (light) to copper (electrical). 
+
+-Intrusion prevention system (IPS)?
+This is software that monitors the network or host for threats, however unlike an IDS it will also take action if it detects a(n) (potential) attack.
+
+-Intrusion detection system (IDS)?
+Software that monitors the network or host for threats, unlike an IPS it will not take action to manage the risk but can be configured to send alerts if a potential attack is detected. IPS examples: can alter, redirect, or drop network traffic to prevent attacks. Since an IPS makes so many decisions and takes so many actions automatically, there is a lot of room for error and hence it makes sense why an IDS would be preferred in some situations.
+
+-Firewall?
+Device or software that blocks certain traffic based on its configured ACLs. An ACL is an access control list, it is used to allow or block certain types of traffic based on certain characteristics, e.g. source IP or destination port. 
+
+-VPN headend?
+AKA "VPN gateway", device or server that serves as the entry point or endpoint for a VPN. It receives incoming VPN connections and manages the authentication and encryption. It establishes the encrypted tunnels that connect with remote clients and/or branch offices. The headend/gateway can perform NAT, usually supports multiple protocols, and can be configured with security policies.
+
+NETWORKED DEVICES
+
+-Voice Over Internet Protocol (VoIP)?
+Technology that allows for voice transmission, similar to traditional telephone, over IP networks. Converts audio signals into digital data.
+
+-Printer?
+A network printer is configured with the IP addressing information that other network endpoints have, e.g. host address, subnet mask, default gateway. This way it can receive print jobs from over the network, versus needing to connect to it with a USB cable. In larger networks, there may even be a print server. Advantages include centralized management and ease of access.
+
+-Physical access control devices?
+Devices that control physical access to a building or other restricted area, e.g. a vestibule. 
+
+-Cameras?
+Network or IP camera, transmits audio and video over the network. Can be wired or wireless, if wired can support PoE.
+
+-HVAC sensors?
+Sensors in IT environments (data centers, server rooms, etc.) that are used to monitor the HVAC conditions. Environmental factors that are monitored: temperature, ventilation, airflow, pressure, leaks, light.
+
+IoT
+
+-Refrigerator?
+Fridge with IP addressing, connected to a network. Features can include inventory tracking, temperature control, energy management, automated ordering, security, data analytics, etc.
+
+-Smart speakers?
+Support AI and cloud connectivity, since they rely on voice recognition for their commands. Usually also offer AI assistants, e.g. Alexa. 
+
+-Smart thermostats?
+Includes remote control, learning algorithms, and integration with other smart home devices. Can also support virtual assistants.
+
+-Smart doorbells?
+Includes internet connectivity and video streaming, two-way audio, motion detection, cloud storage, integration with other smart devices.
+
+-ICS/SCADA?
+Industrial Control Systems/Supervisory Control And Data Acquisition, these are control and automation systems for industrial environments, i.e. "IT without carpet". The two main cateogies of ICS are process control systems (general, large scale) and discrete control systems (specific, small scale). Technically, SCADA is a subset of ICS that focuses on data aggregation, monitoring, and analysis. SCADA features include remote monitoring, data acquisition, control, security.
+
+COMPARE AND CONTRAST ROUTING TECHNOLOGIES AND BANDWIDTH MANAGEMENT CONCEPTS
+
+ROUTING
+
+-Dynamic routing?
+Relies on routing protocols, e.g. RIP, OSPF. Routing tables are configured automatically via inter-router communication. Best routes are calculated automatically based on factors such as distance, link state, connection speed, etc.
+
+PROTOCOLS
+
+-RIP?
+Router Information Protocol, one of the earliest dynamic routing protocols. It is a distance-vector protocol, which means it makes routing decisions based on how many hops are needed to reach the destination. While it does offer low overhead, it is considered primitive because hop count is not actually a very good metric for determining the best route to a destination. Other factors need to be taken into consideration, such as the link state.
+
+-OSPF?
+Open Shortest Path First, designed to work within a single AS, it is perhaps the gold standard of dynamic routing protocols. OSPF is a link-state protocol, which means it takes into account the bandwidth of any connection that it may choose to add to its routes. The metric OSPF uses is "cost": the lower the cost of a route, the higher the preference OSPF will give to it, because lower-cost routes have connections with higher bandwidth.
+
+-EIGRP?
+Enhanced Interior Gateway Routing Protocol, a Cisco proprietary technology for dynamic routing which uses and advanced distance-vector protocol. This means that it utilizes features of both distance-vector and link-state protocols, taking into account bandwidth, delay, reliability, load. 
+
+
+-BGP?
+Border Gateway Protocol, used for routing between separate ASes (Autonomous Systems), i.e. between different networks run by different organizations. It is the most widely used exterior gateway protocol, meaning that it is used for dynamic routing over the internet as a whole rather than smaller subnets in the same wider network.
+
+-Link state?
+A type of dynamic routing protocol that determines the best route based on connection bandwidths. Routers and multilayer switches running this protocol keep a link-state database and use LSAs (link-state advertisements) to share information and determine best routes. Examples: OSPF, IS-IS.
+
+-Distance vector?
+A type of dynamic routing protocol that determines the best route based on hop count. DV routers/switches send routing updates to each other periodically. Examples: RIP.
+
+-Hybrid?
+Combines elements of both DV and LS routing protocols. Example: EIGRP.
+
+-Static routing?
+Routes that are configured manually by the admin/engineer. Advantages include less overhead, predictability, reliability. Would only recommend for smaller, simpler networks.
+
+-Default route?
+Typically specified as an IP address, which belongs to the default gateway or the router that connects the LAN to the internet. In IPv4, it is typically represented as 0.0.0.0/0, it is used when the router has no other route the destination.
+
+-Administrative distance?
+Numerical value that represents the level of preference or trustworthiness assigned to a particular route. Lower value means more trustworthiness. Directly connected routes have the lowest AD value, 0 or 1. Static routes usually have an AD value of 1, dynamic routes vary. AD values can also be configured manually.
+
+-Exterior vs Interior?
+Exterior routing protocols handle routing between different ASes, the most widely used example is BGP. Interior routing protocols handle routing within a single AS, these protocols are more numerous: RIP, OSPF, IS-IS, etc.
+
+-Time to Live?
+The maximum number of hops a routing update can travel before it is considered to be invalid and gets dropped.
+
+BANDWIDTH MANAGEMENT
+
+-Traffic shaping?
+The practice of configuring a network and its devices to route the traffic in a specific manner, e.g. to prioritize data from certain applications over others, load balancing, using specific routes and/or devices for certain traffic. 
+
+-Quality of Service (QoS)?
+Principle that prioritizes certain types of network traffic over others, e.g. audio and video at an organization that relies on virtual meetings to conduct business.
+
+CONFIGURE AND DEPLOY COMMON ETHERNET SWITCHING
+
+-Data VLAN?
+A VLAN configured for data exchange, can be useful for security and segmentation.
+
+-Voice VLAN?
+Designed for VoIP traffic, used to prioritize and optimize the voice data transmission.
+
+PORT CONFIGURATIONS
+
+-Port tagging (802.1q)?
+Port/VLAN tagging is used to label and route packets based on their specific source and/or destination VLAN. 
+
+PORT AGGREGATION
+
+-LACP?
+Link aggregation control protocol, used to configure and manage link/port aggregation, i.e. combining separate physical ports on a router/switch as a single logical interface.
+
+-Duplex?
+Half duplex means a given connection can transmit or receive, but not at the same time. Full duplex means a given connection can transmit and receive at the same time. Half duplex connections are quite rare nowadays.
+
+-Speed?
+Transmission speed is generally measured in bps (bits per second), e.g. Gigabit Ethernet is called that because it is capable of transmitting up to 1 Gbps under the right conditions.
+
+-Flow control?
+Entails managing the transmission of data so that all destinations are able to receive and process it successfully, based on their respective capabilities in doing so. For example, a brand new high-performance webserver might be serving a web request for a fairly high-performance web app, and the client may be a fairly old computer with comparatively low processing power. Flow control will most likely be needed to ensure the client can sucessfully process the packets.
+
+-Port mirroring?
+Involves creating a copy of all traffic passing through a particular port, recreating it, and then sending it to a different port (on the same device or another) in order to analyze its contents. This process does not disrupt or otherwise affect the original port or traffic, it only allows admins to view the traffic in its entirety. 
+
+-Port security?
+Refers to the security of physical ports on networking equipment, particularly switches. Port MAC address filtering is one commonly used method of ensuring that only authorized devices are able to access the network. If, for example, an unauthorized device does connect to a port, it could be configured to shut down so that the device/user isn't able to access the network, or alternatively to send alerts to admins and/or log the event. The most notable vulnerability in port security is that it relies on MAC addresses, ergo an attacker could potentially use an attack method from higher in the OSI stack.
+
+-Jumbo frames?
+Ethernet frames that are larger than 1500 bytes. Usually not supported, but networks can be configured to allow jumbo packets; they are common in SAN networks because of the sheer volume of data being processed.
+
+-Auto MDI-X (Medium-Dependent Interface Crossover)?
+802.3ab, automatically detects and configures correct signaling for network cable connections, specifically in ethernet. Before AMDI-X, a specific type of cable was needed (straight-through, crossover) based on what kinds of devices you were trying to connect.
+
+-MAC tables?
+Used by switches to associate connected devices with their corresponding switchports. This is because, within a LAN, packets are delivered based on MAC address. 
+
+-PoE/PoE+?
+Power over Ethernet, allows devices to receive electrical power over ethernet cables. The cable can be used simultaneously for powering/charging the device and data transmission. PoE+ delivers higher power transmission than PoE, which allows it to support more types of devices.
+
+-STP?
+802.1d, Spanning Tree Protocol, a technology that prevents routing loops in a network. It selects a single path and then disables all others. STP selects a "root bridge", which is the switch that becomes the reference point for calculating the best paths. Switches exchange BPDUs in order to calculate the best paths. Like OSPF, STP also uses "cost". 
+
+-CSMA/CD?
+Carrier Sense Multiple Access with Collision Detection, a feature of early ethernet networks that could only support half-duplex communication. It helps to avoid packet collisions, as well as detect them when they occur. It "listens" to the network for transmissions and collisions, if a collision does occur then it waits until the media are clear and then restarts the transmission.
+
+-ARP?
+This layer 2 protocol is used in ethernet to map MAC addresses to IP addresses. ARP broadcasts (technically "ARP requests") are sent out on the LAN with a particular MAC address, asking for the IP address that goes with it. All of the devices in the LAN actually keep their own ARP tables with these mappings, however the entries are cleared regularly in order to make it more dynamic. 
+
+-NDP (Neighbor Discovery Protocol)?
+This is an IPv6 technology used by network devices to discover other hosts in the LAN. It basically replaces ARP and ICMP in IPv4. A neighbor relationship table gets created, RA (Router Advertisement) messages are used for discovery. Uses various ICMPv6 message types, including RAs.
+
+802.11 STANDARDS
+
+-a?
+The successor to 802.11b, transmits at 5 GHz and supports data transfer speeds of up to 54 Mbps. 
+
+-b?
+The original wireless networking standard, transmits at 2.4 GHz and supports data transfer speeds of up to 11 Mbps.
+
+-g?
+The successor to 802.11a, transmits at 2.4 GHz and supports data transfer speeds of up to 54 Mbps.
+
+-n?
+Wi-Fi 4, successor to 802.11g. Transmits in 2.4 and 5 GHz frequency bands. Can transmit at rates up to 600 Mbps. Backwards compatible with earlier standards; this standard also introduced MIMO, multiple-input multiple-output, i.e. many different data streams can be transmitted simultaneously to a single device. Supports channel bonding of adjacent channels, e.g. 20 MHz or 40 MHz wide channels. 
+
+-ac?
+ Wi-Fi 5, transmits mostly in the 5 GHz frequency band. Data rates are up to 1.3 to 3.5 Gbps, depending on the configuration. This standard introduced MU-MIMO, Multiple User MIMO, which means that multiple devices can receive multiple streams of data all at the same time. Uses channel bandwidths of up to 160 MHz, backwards-compatible with all of the above standards, supports beamforming. 
+
+-ax?
+Wi-Fi 6, transmits at the 2.4 or 5 GHz frequency range. Data rates up to 9.6 Gbps, backwards-compatible with all of the above standards. Supports WPA3, uses OFDMA to divide channels into smaller subchannels. 
+
+FREQUENCIES AND RANGE
+
+-2.4 GHz?
+Longer wavelength means the signal reaches further and is less susceptible to signal loss, however since so many other wireless devices transmit in this frequency range, that could introduce a lot of interference.
+
+-5 GHz?
+Shorter wavelength means higher data transmission rates and shorter range. The advantage is that fewer wireless devices transmit in the 5 GHz frequency range, which means less signal interference.
+
+CHANNELS
+
+-Regulatory impacts?
+Governments create and then enforce many regulations re. networking for security, privacy, and public access reasons. Example: governments decide which frequency bands will be used (e.g. 2.4 or 5 GHz) in order to minimize interference. Also standards for networking, e.g. 4G, 5G.  
+
+-Channel bonding?
+Refers to the practice of combining separate transmission channels on an access point, e.g. channels 1 and 2. This is done in order to increase throughput, improve performance, and improve reliability. A wider channel means higher bandwidth. Channel bonding requires support from both the source and destination devices. 
+
+SSID
+
+-Basic service set?
+Refers to the assortment of devices for which a single access point is routing network traffic, including the AP.
+
+-Extended service set?
+Expands upon the BSS to include other access points in the same network, but they must have the same SSID and password, e.g. a CAN with multiple access points throughout the campus all labeled "University Wi-Fi". Roaming is a huge advantage of an ESS, as an end user can have uninterrupted internet access all across the campus (in this example). 
+
+-Independent basic service set (ad-hoc)?
+Wireless devices communicate directly with one another without the need for a central AP or router. Disadvantages: poor security, limited range. 
+
+-Roaming?
+Refers to physical movement, when a connection is said to be "roaming" it means the end user can remain connected to the network even if their physical location changes (within a reasonable boundary).
+
+ANTENNA TYPES
+
+-Omni?
+Omnidirectional means it transmits in all directions, in a donut-shaped pattern.
+
+-Directional?
+Transmits the signal in a particular direction, the pattern somewhat resembles a weather balloon.
+
+ENCRYPTION STANDARDS
+
+-WPA?
+Wireless Protected Access, now deprecated but it was an improvement upon the old WEP standard. Originally it was a temporary solution to WEP insecurity while WPA2 was being developed. It uses TKIP for encryption and EAP for authentication. 
+
+-WPA2 Personal?
+Uses AES for encryption, which to this day is very secure. Users enter a PSK (pre-shared key) to access the network, recommended for SOHO.
+
+-AES?
+Advanced Encryption Standard, highly secure, uses a symmetric encryption algorithm. AES has many applications, including data in motion, data at rest, VPNs, and web browser (TLS).
+
+-TKIP?
+Temporal Key Integrity Protocol, used for encryption and data integrity in WPA but now deprecated. 
+
+-WPA/WPA2 Enterprise (AES/TKIP)?
+Stronger authentication protocols than the Personal variant, often uses a RADIUS server. Each user normally has a unique set of credentials. 
+
+CELLULAR TECHNOLOGIES
+
+-CDMA?
+Code Division Multiple Access, mostly deprecated. Used in 2G and 3G cellular networks. Enables multiple endpoints to share the same frequency spectrum for simultaneously transmitting and receiving data. The data signal is spread over a frequency band and assigned a unique spreading code in order to differentiate the data streams. 
+
+-GSM?
+CDMA competitor, Global System for Mobile Communications. Uses TDMA instead of CDMA as its multiple access method. TDMA divides frequency band into time slots for each user or conversation. Mostly deprecated, but still used in some networks.
+
+-LTE?
+Long Term Evolution, aka 4G LTE. Offers download speeds of over 100 Mbps, LTE networks treat all data as IP packets, which makes it more efficient as it is integrated with the internet. Backwards compatible with 2G and 3G, although for data only (not voice). Can operate in FDD or TDD modes, VoLTE also allows for voice over LTE. It is the foundation for 4G in many parts of the world. 
+
+-3G?
+Third Generation, where 2G focused on voice, 3G was the first standard to fully support both voice and data. It was referred to as "mobile broadband" because it was the first time users had the broadband internet experience on mobile devices. 
+
+-4G?
+Fourth Generation, supports download speeds of over 100 Mbps in ideal conditions. LTE is technically a 4G technology, as well as WiMAX. 4G introduced carrier aggregation (combining multiple frequency bands), MIMO, and improved modulation schemes. Like 3G, it is all-IP; it is also backwards-compatible with its predecessors.
+
+-5G?
+Fifth Generation, 
+
+-MIMO?
+Multiple Input, Multiple Output; introduced as part of 802.11n (Wi-Fi 4), allows for multiple data streams to be simultaneously transmitted to a single device.
+
+-MU-MIMO?
+Multi-User Multiple-Input Multiple-Output; introduced as part of 802.11ac, allows for multiple data streams to be transmitted simultaneously to multiple devices.
+
+EXTRAS
+
+*Baseband?
+A single channel is used for transmitting data, ergo the entire bandwidth is used to send just one signal. Mostly used for short-distance communication, e.g. wired Ethernet LANs, USB, and HDMI.
+
+*Broadband?
+Simultaneous use of multiple channels or frequencies within a wider frequency range, ergo multiple signals can be sent simultaneously. Mostly used for long-distance connections, e.g. DOCSIS, DSL, and fiber. 
+
+PERFORMANCE METRICS/SENSORS
+
+-Device/chassis?
+A chassis is the case that a desktop computer goes in. There are various types of sensors that can go on a computing device or its chassis, including those that monitor temperature, voltage, intrusion, humidity, light, etc.
+
+-Temperature?
+CPUs and GPUs in particular run very hot. Luckily, all or most modern computers come with built-in temperature sensors, namely on the processors as those are the components that tend to heat up the most. 
+
+-CPU usage?
+CPU sensors are typically built into the CPU itself, they are known as "CPU performance counters".
+
+-Memory?
+RAM modules do not typically have sensors built in. To monitor their usage, software running on the host system is typically used, you can also use command-line tools such as "top" or "htop" on Mac and Linux.
+
+NETWORK METRICS
+
+-Bandwidth?
+Refers to the peak amount of data that can be transmitted over a network or connection under ideal conditions in a span of time, usually measured in bps (bits per second), e.g. 1 Gbps.
+
+-Latency?
+Describes how long it takes a packet to travel from its source to its destination across a network, typically measured in milliseconds (ms).
+
+-Jitter?
+Describes the temporary variations in network latency during a given span of time, typically measured in ms.
+
+SNMP
+
+-Traps?
+These are notifications or alerts that get sent from SNMP endpoints to the SNMP manager.
+
+-OIDs?
+Object IDentifiers, these are numbers separated by dots that get assigned to SNMP endpoints for monitoring and management.
+
+-MIBs?
+Management Information Database, this is a hierarchical, tree-like database of information about the SNMP network. It contains definitions and descriptions of the managed objects that an SNMP agent (installed on the endpoint) can make available to the SNMP manager.
+
+NETWORK DEVICE LOGS
+
+-Log reviews?
+Fundamental IT process of sifting through logs and analyzing them to monitor the network and its devices.
+
+-Traffic logs?
+These are used to monitor network traffic, they are generated by many networking devices, e.g. switches, routers, firewalls, IDS/IPSes, and servers. They can contain the typical information you would find in network packets (IP addresses, protocols, etc.), but can even contain more advanced information such as QoS.
+
+-Audit logs?
+These logs record specific events, actions, or changes that occur in a network, device, or application. 
+
+-Syslog?
+This is a technology that allows for centralized storage and management of network logs. The individual devices (senders) generate their logs, and then Syslog is used to aggregate, manage, and analyze these logs on a syslog server. 
+
+-Logging/severity levels?
+0 to 7, with 0 being the most severe. I have saved these levels in a separate text document in this same repo.
+
+INTERFACE STATISTICS/STATUS
+
+-Link state (up/down)?
+A link that is up is one that is functioning and can transmit/receive, a link that is down is not functioning.
+
+-Speed/duplex?
+A link can be configured as one of various ethernet standards, e.g. 10 Mb Ethernet, 1 Gb Ethernet, 10 Gb Ethernet. Its duplex status refers to whether it can transmit and receive at the same time (i.e. full duplex). Half duplex is almost never used today, but it means that a link can transmit and receive, but not at the same time.
+
+-Send/receive traffic?
+If an interface/link is up, it should be able to send and receive traffic.
+
+-CRCs?
+Cyclic Redundancy Check, it is a packet checksum that is part of the layer 2 frame. 
+
+-Protocol packet and byte counts?
+Metrics used to measure the amount of data transmitted over the network for a particular protocol.
+
+INTERFACE ERRORS OR ALERTS
+
+-CRC errors?
+These occur when the checksum for the packet does not match what was expected, which could point to data corruption or manipulation. The sender sends the CRC as part of the packet, the receiver then recalculates the CRC to make sure it matches the value sent with the packet. 
+
+-Giants?
+A giant is a packet that exceeds the MTU for the network, which is 1500 bytes by default. However, it is possible reconfigure the network to allow for giants.
+
+-Runts?
+A packet that is below the minimum transmission unit for the network, which is 64 bytes by default. As with giants, the problem is that the network doesn't really know how to process these packets, unless specifically configured to do so.
+
+-Encapsulation errors?
+Can occur during encapsulation or de-encapsulation, causes include: protocol mismatch, fragmentation, packet corruption, improper configuration of devices, software bugs, network congestion, etc.
+
+ENVIRONMENTAL FACTORS AND SENSORS
+
+-Temperature?
+Computers tend to overheat, namely because of their processors. This is especially an issue for servers, which is why server rooms are so cold and well ventilated. Computing environments also can't be too cold, as this could cause components to freeze.
+
+-Humidity?
+Some humidity can reduce static electricity in a computing environment, and help keep it cool. However, once humidity levels become excessive, it can lead to short circuits, mold and fungus growth, performance issues, data loss, etc. 
+
+-Electrical?
+Obviously you need enough electricity to power all devices, but excessive electricity (e.g. a lightning storm) can have a very damaging effect on equipment. If there is a power surge, it could cause network devices to crash or even stop working altogether. In addition, there can be EMI, overheating, electrostatic discharge, etc.
+
+-Flooding?
+This would be catastrophic, as networking equipment isn't usually entirely waterproof. 
+
+-Baselines?
+Advantageous for keeping a record of normal network functionality levels, that way you always have something to compare to if you suspect that your network is performing below or above its average capability. 
+
+-NetFlow data?
+Network protocol and monitoring technology developed by Cisco, primarily used for collecting and analyzing network traffic. NetFlow is not limited to Cisco devices.
+
+-Uptime/Downtime?
+Uptime describes how long a system or network remains fully operational, downtime describes how long it remains not so.
+
+PLANS AND PROCEDURES
+
+-Change management?
+Describes the (hopefully) careful procedure that must be followed when implementing changes in an organization's network. Typically involves submitting a written request to management outlining which changes would be implemented and the reasoning behind them. Assuming management grants permission, ideally the changes would be tested in a controlled lab environment before being implemented in production, to ensure nothing breaks as a result.
+
+-Incident response plan?
+This is more of a short term plan, in the event of a security incident. It outlines how the company will manage the breach and continue operations in the short term.
+
+-Disaster recovery plan?
+This is a short- to mid-term plan in the event of a natural disaster or similar event. It often includes the use of cloud, hot, warm, or even cold sites to continue operations. 
+
+-Business continuity plan?
+This is a mid- to long-term plan that outlines how the company will stay in business in the case of various types of adverse events. It often comes into play at the same time or after the IR and/or DR plans.
+
+-System life cycle?
+AKA software development life cycle, it is a concept in IT that describes the entire process of software development. According to GPT, the stages are Planning, Analysis, Design, Implementation, Testing, Deployment, Operation & Maintenance, Monitoring & Optimization, Retirement/Decommissioning. However, there are many other models to choose from, e.g. Waterfall, Agile.
+
+-Standard operating procedures?
+SOPs describe the standardized process by which a particular action should be performed, e.g. the SOP for implementing a change in the network is done in stages: proposal, testing, implementation, monitoring, etc. (this is only a hypothetical example of an SOP).
+
+HARDENING AND SECURITY POLICIES
+
+-Password policy?
+Describes the length and also the required characters for a password, e.g. 40 characters long and must contain letters (upper and lower case), numbers, and symbols.
+
+-Acceptable use policy?
+Describes the way in which employees or members of an organization are allowed to use organizational resources, typically its computing devices and/or internet access. Example: employees may not install apps on company devices, nor are they allowed to view lewd materials on the company network, even if they are using their own devices.
+
+-Bring your own device policy?
+BYOD, a relatively new approach to the workplace that allows employees/members to bring their own devices and connect to the organization's network in order to carry out their work functions. Naturally, most organizations are going to have fairly stringent requirements for the types devices members can bring, given the state of IT security in 2023. Example: device must be no more than a few years old, must be fully patched, etc.
+
+-Remote access policy?
+Describes the way in which remote employees/members of an organization will be allowed to configure and use their remote connections, e.g. in order to connect to the company network, employees must be running a major operating system that is fully patched and up-to-date, and they must also use an organization-approved VPN at all times when connecting to the network. 
+
+-Onboarding and offboarding policy?
+Onboarding means bringing new employees/members into the organization, offboarding means removing them from the organization. Obviously, before onboarding somebody you should conduct a background check, maybe drug testing, train them in IT security essentials; and when offboarding you should be sure to cut them off from access to the network in the case that they are upset about their termination.
+
+-Security policy?
+Establishes a framework for protecting an organization's CIA. Encompasses many other security approaches, e.g. IR, DR, BC, etc.
+
+-Data loss prevention?
+DLP, entails policies and procedures for how to prevent data loss by an organization, particularly sensitive data. Example: role based access, separation of duties, immediately cutting off access to newly terminated employees, etc.
+
+COMMON DOCUMENTATION
+
+-Physical network diagram?
+Displays the physical layout of a network, including networking devices, endpoints, cables, etc. 
+
+-Floor plan?
+Displays the floor topology of the building in which a network will run, can be combined with the physical and/or logical network diagrams for more detail.
+
+-Rack diagram?
+Illustrates the details of a server rack, including the various servers and other networking devices that might live on it, and any cables that might be running down it. Also the ports that are being used and what they are used for, ventilation/airflow, power distribution, etc.
+
+-IDF/MDF?
+Intermediate Distribution Frame and Main Distribution Frame. IDF is a sort of middle point between an organization's network and the MDF, which in turn is where the jurisdiction of the organization ends and that of the ISP begins (i.e. the demarc). 
+
+-Logical network diagram?
+Illustrates the non-physical facets of a network, e.g. IP addresses, subnet masks, default gateways, connection types (fiber, ethernet), traffic flow, VLANs, subnets, routing domains, network segments, protocols, services, etc.
+
+-Wiring diagram?
+Illustrates specifically the cabling in a network or segment, what types of cables and connections are present, what ports they connect to, the path the cables travel, etc.
+
+-Site survey report?
+This is written up after inspecting the tentative location of a network installation, or the actual location of an existing network that wants to install additional equipment. Basically it is a report of the inspection of the venue or location, how suitable it is for the proposed installation. It is created as part of a physical inspection of the area, which will be used for either installation, upgrade, or maintenance of a network.
+
+-Audit and assessment report?
+Evaluation of a specific aspect of an organization's IT systems, processes, or controls. The evaluation is carried out by auditors or consultants, and seeks to remediate weaknesses in the organization's IT posture. Example: external pentesters who are contracted to test the organization's IT security.
+
+-Baseline configurations?
+Refers to the default state of a given network or device, also its default performance metrics. Baselines are useful for objectively measuring the variations in network/device performance and behaviors, e.g. users may complain that the network is slow on Fridays, but only by comparing the state of the network on that day with its baseline can we be certain.
+
+COMMON AGREEMENTS
+
+-NDA?
+Non-disclosure agreement, used to prevent someone or a group from sharing proprietary or otherwise sensitive information about the company, or having to do with the company.
+
+-SLA?
+Service level agreement, legally binding document that outlines the expectations a client is entitled to regarding the service being provided. Example: Amazon issues a SLA to a prospective client that wants to set up an AWS instance, so the client knows exactly what they should expect and the level of service they would be entitled to if they do decide to go through with it.
+
+-MOU?
+Memorandum of understanding, non-legally binding document that explains an agreement between two or more parties. Example: IT and Development write up an MOU to delineate their respective roles in managing the organization's tech and their respective jurisdictions.
+
+HIGH AVAILABILITY AND RECOVERY CONCEPTS
+
+-Load balancing?
+Entails the even distribution of network traffic and/or data processing across all available (only if equally efficient) paths and/or nodes, e.g. if there are two equally effective paths to an organization's gateway, load balancing would ensure that both of these paths get used with equal frequency in order to ensure low latency, even wear and tear on hardware, redundancy, and reliability.
+
+-Multipathing?
+Often used in SAN or NAS networks, allows for use of multiple physical or logical paths between the server and storage devices.
+
+-NIC teaming?
+Often implemented on servers, involves using multiple physical NICs as one logical interface in order to increase transmission speeds and reliability.
+
+REDUNDANT HARDWARE/CLUSTERS
+
+-Switches?
+A group of physical network switches that are configured to work as one logical switch.
+
+-Routers?
+A group of physical network routers that are configured to work as one logical router.
+
+-Firewalls?
+A group of physical network firewalls that are configured to work as one logical firewall.
+
+FACILITIES AND INFRASTRUCTURE SUPPORT
+
+-UPS?
+Uninterruptible Power Supply, often used in data centers in case of a power outage. It runs on battery power and often includes surge protection.
+
+-PDUs?
+Power Distribution Unit, often used in data centers to distribute power evenly and efficiently across devices. They offer many features to ensure that devices only need as much electricity as they actually need, these controls can be built into the PDU or the PDU can be managed with external software or hardware.
+
+-Generator?
+Backup power in the case of an electrical grid outage or other adverse event. These can run on gas, propane, battery, diesel. 
+
+-HVAC?
+Heating, Ventilation, Air Conditioning; these elements are incredibly important not only in a data center but also even just in an office. Servers especially run very hot. 
+
+-Fire suppression?
+Most commonly use water, but that can obviously damage equipment. Other options include gaseous agents, e.g. nitrogen, argon, FM-200, Novec 1230, etc.
+
+REDUNDANCY AND HIGH AVAILABILITY (HA) CONCEPTS
+
+-Cold site?
+Essentially an empty space rented from a provider that can be used to conduct business from; however since there is next to nothing in the space, resuming business from it will most likely take a week or longer.
+
+-Warm site?
+May have some equipment partially configured, but not nearly everything that is required to resume business operations at the same level as the primary site(s). Less expensive and less difficult to maintain than a hot site, but if operations need to be moved to the warm site, it will take longer than if the organization had a hot site set up.
+
+-Hot site?
+This is a fully equipped, configured, and running space rented out from a provider. It is more expensive and difficult to maintain than the last two types of sites, but the advantage to it is that business operations can resume (almost) immediately if the primary site(s) become unusable.
+
+-Cloud site?
+Space and equipment rented from a cloud provider that can be used to remotely continue business operations in the event that the on-premises site(s) become(s) unusable. 
+
+-Active-active vs active-passive?
+Redundancy/HA configurations: AA means all components/nodes in the cluster are active and handling request, they all share the workload. AP means that a single node in the cluster is actively serving requests, and all of the others are on standby; passive nodes become active only if the active one fails or runs into an error. 
+
+Some combination of the two is also common.
+
+-Multiple ISPs/diverse paths?
+MISP refers to using more than one ISP for data transmission, which increases redundancy and reliability in case one of the ISPs has a problem. DP refers to the use of multiple physical and/or logical paths in a network when transmitting from source to destination, and vice-versa. 
+
+-VRRP/FHRP?
+Virtual Router Redundancy Protocol/First Hop Redundancy Protocol. 
+
+VRRP is technically an example of a FHRP, it enables multiple routers to work together in a group using a virtual IP address as the gateway for the LAN. FHRP is a set of protocols/techniques used to provide redundancy to the default gateway/first hop router in a LAN. 
+
+-MTTR?
+Mean Time to Recovery, a metric used to measure the expected amount of time it will take to recover from an adverse event, e.g. server crash.
+
+-MTBF?
+Mean Time Between Failures, a metric used to describe the average amount of time it takes for a device or network to stop functioning and/or require maintenance.
+
+-RTO?
+Recovery Time Objective, the maximum acceptable amount of time it is expected to take to resume normal operations.
+
+-RPO?
+Recovery Point Objective, the maximum acceptable amount of data loss an organization is willing to endure after an adverse event.
+
+NETWORK DEVICE BACKUP/RESTORE
+
+-State?
+Describes the exact condition in which a device or network exists at a given point in time, in this case at the point in time in which a backup is created.
+
+-Configuration?
+Describes the precise settings with which a device or network is set up in order to get it to perform the tasks it needs to do, in the precise manner in which the organization needs. Configuration files (such as .cfg files in Cisco routers) are often used to quickly and easily set up new and/or additional devices with the exact settings that are needed.
+
+COMMON NETWORK SECURITY CONCEPTS
+
+-CIA?
+Confidentiality, Integrity, Accessibility. Everything we do in IT and cybersecurity revolves around these three principles.
+
+THREATS
+
+-Internal?
+These are threats that originate from inside of the organization, e.g. an IT employee who has just been laid off and is very unhappy about it. If their offboarding is not handled correctly, the disgruntled ex-employee could become an internal threat, for example by using their access to download sensitive information from the company and then sell it on the dark web.
+
+-External?
+These are the traditional threat actors: solo hackers, nation-state groups, APTs, ransomware gangs, etc.
+
+VULNERABILITIES
+
+-CVE?
+Common Vulnerabilities and Exposures, it is a highly respected list of the current most common IT security attack vectors. Each vulnerabilities is assigned a CVE ID. The CVE addresses software, hardware, firmware, and other types of vulnerabilities. Additionally, it often includes information about how to patch or mitigate the threat. 
+
+-Zero day?
+A vulnerability that is unknown to both the manufacturer/source and the IT security community as a whole. It is called a "zero day" because if it used to launch an attack, that attack would be carried out on day zero of the history of the collective knowledge of the attack. 
+
+-Exploits?
+An exploit is an instance of capitalizing on a vulnerability to launch an attack.
+
+-Least privilege?
+IT (security) principle that says that users should be given just enough access and permissions to do their jobs, but no more than that. This helps mitigate threats by limiting access to only what is strictly necessary. 
+
+-Role-based access?
+IT (security) principle that says that access/permissions should be based on a user's role, e.g. a Help Desk Technician probably does not need Domain Admin access to do their job, and therefore should not be given that access based on their specific role.
+
+-Zero trust?
+A principle in IT (security) that says that one should "never trust, always verify". Entails authentication, least privilege, micro-segmentation, encryption, and more.
+
+-Defense in depth?
+IT security approach that emphasizes multiple layers of security, not just one. Example: an organization uses role based access, least privilege, separation of duties, a centralized antivirus system across all devices, physical security systems, etc.
+
+-Network segmentation enforcement?
+Segmentation means dividing up an organization's network into smaller subnets. The purpose of this is to limit the potential for lateral movement in the case that an attacker does get into the network. Even if they manage to make it onto one of the subnetworks, segmentation would make it difficult (if not impossible) for them to move onto other, more critical subnets.
+
+-Perimeter network (aka DMZ)?
+A DMZ is a network segment that is used as a buffer between an organization's internal network and its external network (starts at the ISP router and includes the internet as a whole). It is recommended that any web (or other type of) servers that need to be available to the internet should live in the DMZ. By placing a firewall (and perhaps additional security devices) at the gateways of both the internal and external networks, it is possible to have a lot more control over the traffic that enters and exits the organization's network. 
+
+-Separation of duties?
+IT security principle that says that different components or steps of a process should be distributed among different agents. Example: an organization needs to replace a malfunctioning router. The senior netadmin might place the order and make the purchase using the company credit card, and the junior admin then collects it from the mailbox when it arrives. The senior admin might then create the configuration file, and the junior admin then installs it onto the new router. Separating duties in this manner makes it harder for any single agent to abuse their power, e.g. if it were not for this approach, the senior admin might steal the router for themself, or perhaps load malware onto it before installing it on the network.
+
+-Network access control?
+802.1x, encompasses many different techniques and procedures for ensuring that a network remains secure. These include: authentication, authorization, endpoint assessment, guest networking, policy enforcement, quarantine, remediation, and more.
+
+-Honeypot?
+A web server or other internet-facing device that is made to look like a vulnerable and worthwhile target, and is used to lure in would-be attackers. They are used for information-gathering purposes, e.g. an organization wants to know what types of attackers are interested in them as a target, so they set up a honeypot to get the hackers to reveal information about themselves. Honeypots can also be useful for learning about attack methods and strategies. 
+
+AUTHENTICATION METHODS
+
+-Multifactor?
+There are three main types of authentication methods: something you know, something you have, and something you are. MFA says users should utilize at least two of these categories, e.g. a key card as well as a PIN to enter the organization's headquarters.
+
+-TACACS+?
+Terminal Access Controller Access-Control System Plus. Protocol developed by Cisco for centralized and granular AAA (authorization, authentication, accounting) for network devices and services. Often used in combination with other security technologies, such as RADIUS and LDAP.
+
+-SSO?
+Single sign on, allows users to access all or most of their apps and services with a single set of credentials.
+
+-RADIUS?
+Remote Authentication Dial-In User Service. Used for centralized AAA, designed to be secure even across an insecure network, such as the internet. Supports passwords, tokens, and more. Uses client-server architecture. Uses a shared secret (PSK) between clients and RADIUS servers. Supports proxying with the setup of multiple RADIUS servers. 
+
+-LDAP?
+Lightweight Directory Access Protocol, used for managing directory services such as Active Directory, which store information about users, devices, resources, and other objects in a structured and hierarchical manner. Directory services are technically a type of database. LDAP supports search and query, authentication, authorization, security, SSO, and device management.
+
+-Kerberos?
+Network authentication protocol designed to be secure even over insecure networks, e.g. the internet. Uses strong encryption to ensure credentials can be transmitted securely. Used especially in Windows Active Directory networks, including those that span across continents or even further.
+
+-Local authentication?
+This occurs exclusively on the host, there is usually a file on the disk that contains hashes of the credentials. If the hashes of the credentials entered by the user match those on file, then access is granted. Advantages: quick and efficient, low overhead, minimal configuration, no credentials are transmitted across a network. Disadvantages: can pose security risks if the device is compromised, lack of centralized management, not scalable. 
+
+-802.1x?
+Encompasses many technologies and policies for protecting access to networks. Designed specifically for ethernet, it is often used in both LANs and WLANs. 802.1x focuses primarily on network device ports and operates at Layer 2 of the OSI model. Involves a supplicant, authenticator, and authentication server. Typically uses EAP to securely transmit authentication messages.
+
+-EAP?
+Extensible Authentication Protocol, allows for various authentication methods to be used in a standardized way. Often used in combination with other protocols (e.g. 802.1x) for authentication purposes in wireless networks as well as other types of connections, e.g. VPNs. Additional supported authentication methods include biometric, token-based, digital certificates, smart cards, and more. 
+
+RISK MANAGEMENT
+
+-Security risk assessments?
+Systemati evaluation of an organization's security, including IT, physical, and other types. 
+
+-Threat assessment?
+Process of evaluating and analyzing potential threats to an organization, IT or otherwise.
+
+-Vulnerability assessment?
+Evaluation of an organization's security posture that focuses on discovering vulnerabilities. 
+
+-Pentesting?
+Ethical hacking, pentesters can be internal to the organization or external contractors. Their job is to test the organization's security posture by attempting to breach the organization's apps, network, physical offices, employees, and more. A detailed report is provided to the organization by the pentesters at the end of the assignment.
+
+-Posture assessment?
+Evaluation of an organization's overall security posture.
+
+BUSINESS RISK ASSESSMENTS
+
+-Process assessment?
+Evaluation of an organization's IT processes, the goal is to gauge the efficiency and compliance thereof. Process assessments often follow industry frameworks and standards, e.g. ITIL, COBIT.
+
+-Vendor assessment?
+Evaluation of third-party vendors/suppliers who provide products and services to an organization. This is to ensure the vendors' products meet organizational and/or industry requirements as far as security, quality, compliance, reliability, etc. 
+
+-SIEM?
+Security Information and Event Management, software that allows for centralized monitoring and management of a network's IT security. Alerts are a central component of a good SIEM, as admins need to know when a potential breach has occurred. Another key advantage offered by a quality SIEM is automated log aggregation and parsing, as this can be incredibly cumbersome to perform manually. 
+
+COMMON TYPES OF ATTACKS
+
+TECHNOLOGY-BASED
+
+-DoS/DDoS?
+Denial of Service/Distributed Denial of Service: DoS involves overloading a target server, usually a webserver, with requests such that it becomes overwhelmed and unable to fulfill any web requests, effectively bringing the website or service down entirely. Distributed DoS does the same thing, except that it uses a botnet to send the overwhelming number of web requests, which makes the attack method capable of taking down the websites of even very large organizations.
+
+-Botnet/C&C?
+A botnet is a network of computers that have been infected with malware such that these computers can be controlled from a central device or devices, i.e. the Command & Control center/host.
+
+-On path (MITM)?
+Traditionally, an on-path attack entails the attacker situating themself between a target device and the device's WAP, which allows the attacker to intercept and even modify the packets being transmitted. But this type of attack can also include an agent situating themself between a webserver and web client, email server and email client, etc.
+
+-DNS poisoning?
+Aka DNS spoofing, this type of attack entails altering the DNS cache data of a DNS server. The goal is to redirect DNS clients to malicious sites instead of the legitimate destination sites, where the malicious sites are probably run by the same group carrying out the DNS poisoning. The precise way it works is that the attacker sends fraudulent responses to the DNS server when it has to perform the process of recursion, then the target DNS server adds the fraudulent IP address to its cache.
+
+-VLAN hopping?
+Involves an attacker breaking out of the VLAN they initially infiltrated and getting into a separate VLAN in the organization's network. For instance, an attacker might initially make their way into the DMZ, which is specifically designed to isolate potential attackers if they do manage to get in. But then they might escape the DMZ and breach the internal network, which could be catastrophic. 
+
+-ARP spoofing?
+Involves injecting fraudulent MAC-to-IP address bindings into a target device's ARP table. When an ARP request goes out, asking for the MAC address that goes with a particular IP address, the rogue device replies and says that it is the device the source was looking for. If successful, the rogue device can then receive all traffic addressed to the original destination device, among other things.
+
+-Rogue DHCP?
+Involves introducing a fraudulent DHCP server into a network, which then replies to DHCP requests with its own IP addressing information. Since DHCP clients receive their default gateways from their DHCP servers, one common tactic is to assign a default gateway that is controlled by the attacker, which then allows them to intercept network traffic; this is among many other types of exploits. DHCP snooping is a good defense against this, but not the only one.
+
+-Rogue AP?
+Unauthorized access points that exist in a network, often set up by an employee or visitor, e.g. an employee brings their own WAP from home and connects it to the ethernet port in their office without asking IT about it. Since the AP hasn't been configured and isn't being monitored by trained professionals, it's quite possible that the settings on it could leave it to vulnerable to an attack. The worst part is that it can thus also be an attack vector into the organization's network. Attackers may also deliberately set up rogue access points, e.g. if they find an unprotected ethernet port somewhere in the building.
+
+-Evil twin?
+Involves mimicking a legitimate access point, i.e. setting up a malicious AP with the same SSID. Users will then connect to the evil twin and the attacker will be able to view and alter network traffic, among other potential actions.
+
+-Ransomware?
+This is a type of malware that encrypts the victim's hard drive. The victim is then ordered to pay a ransom in order to have their data decrypted. However, it is common for attackers to leave the data encrypted even after the victim pays the ransom.
+
+PASSWORD ATTACKS
+
+-Brute force?
+This type of attack entails running through all possible combinations, hence "brute force".
+
+-Dictionary?
+A dictionary attack is similar to a brute-force attack, except that the list of combinations is pre-determined and finite. Example: the historic RockYou text file is a list of all of the passwords that users on the site had configured on their accounts, it is still used to this day---for educational purposes, at least.
+
+-MAC spoofing?
+Involves broadcasting a fraudulent MAC address, e.g. for the purposes of traversing a MAC filter. The source MAC address in the network packets coming from the rogue device is altered to match that of a trusted device on the LAN.
+
+-IP spoofing?
+Involves advertising a fraudulent IP adress, e.g. to get past a firewall. Since firewalls and similar security technologies often rely on IP addresses, this can be a very potent attack. Like MAC spoofing, IP spoofing involves changing the network packet's source IP.
+
+-Deauthentication?
+The attacker floods a network with deauthentication frames in order to disrupt a particular connection or simply the entire network. This type of attack works because deauth frames are actually perfectly legitimate, they are used by admins to disrupt connections to their (W)APs as needed. The attacker ensures that the deauth frames appear to be coming from the (W)AP, so that its connected devices accept the deauth frames and agree to disconnect.
+
+-Malware?
+Shortened version of "malicious software", encompasses many different kinds of programs that are designed to cripple computer systems, take control of them, extract information from them, etc. There are so many different types of malware in 2023 that it is beyond the scope of a single exam objective to list them all. Some common examples are ransomware, viruses, and Trojans.
+
+HUMAN AND ENVIRONMENTAL
+
+-Social engineering?
+Involves deceiving and manipulating human beings in order to gain access to restricted information systems and/or buildings. This is actually perhaps the most common attack vector, as apparently it is easier to exploit vulnerabilities in humans than it is in computers or physical structures. Social engineering is commonly done over the phone, but can also be done over such communications systems as instant messaging or email.
+
+-Phishing?
+Involves crafting a URL or some other mechanism to lure end users onto a malicious website designed to look like a legitimate website they might access, e.g. Gmail.com. The goal is to deceive end users into sharing their credentials or other sensitive information, whether that is on the website or through some other mechanism. There are many variations of this type of attack, e.g. a user clicks on a link in a text message from a number claiming to be their phone service provider, and when they land on the website malware gets downloaded and run automatically on their computer. Other variants include vishing (voice phishing), spear phishing (targeting a specific, usually high-level, member of an organization), and smishing (SMS phishing). 
+
+-Tailgating?
+Involves an unauthorized and unauthenticated user closely following an authorized and authenticated user into a restricted area such that they bypass the security controls in place. 
+
+-Piggybacking?
+Similar to tailgating, except that piggybacking can be unintentional and/or the two people might be walking side by side rather than one trailing behind the other in order to deliberately gain unauthorized access to a restricted area. 
+
+-Shoulder surfing?
+Involves an attacker looking over the shoulder (or thereabouts) of an end user in order to see what they are doing on the computer, usually they are entering credentials or looking at some kind of sensitive information.
+
+NETWORK HARDENING TECHNIQUES
+
+-Secure SNMP?
+SNMPv1 lacked very many security features, ergo SNMPv3 was created to help fill in the gaps. Security features added: authentication, authorization, encryption, integrity, USM (user-based security model), VACM (view-based access control model). 
+
+-Router Advertisement (RA) Guard?
+Network security feature used to protect against Router Advertisement Spoofing and/or Rogue Router Advertisement attacks, which can occur in IPv6 networks. RAs are a normal and essential component of IPv6 networks because they allow routers to communicate with each other and gain information about the status of the network. RA Spoofing then, is when an attacker leverages these network building blocks to send out fraudulent and malicious RAs. The attacker can use RA Spoofing to divert network traffic to a device controlled by them, perform a DoS attack on the network, or execute a MitM/on-path attack, and more. 
+
+RA Guard, then, is implemented on network routers and/or switches. It works by monitoring, validating, and blocking RAs based on whether they are deemed to be legitimate or not. 
+
+-Port security?
+Involves securing network switchports, relies primarily on MAC address filtering. MAC address limits on a particular port are also common, this means that only a give number of devices can connect to that port before any further attempts are denied. MAC address limits can be configured manually or dynamically. Admins can configure actions to be taken when a violation does occur, e.g. sending an alert, logging the event, shutting down the port, etc.  
+
+-Dynamic ARP inspection?
+Network security feature typically implemented on network switches to protect against ARP spoofing, etc. Works by inspecting and verifying ARP packets as they travel across the network, one method it uses is to maintain a database of valid IP-to-MAC address bindings. These bindings are usually collected and maintained through DHCP snooping, or manually. If the information in the ARP packet matches the database, then the packet is allowed through. If a suspicious packet is detected, DAI can drop it or log the event. 
+
+-Control plane policing (CoPP)?
+In network devices, there are two primary planes of operation: data and control. In the data plane, the device forwards packets based on the routing decisions made at the control plane. The control plane is where the device manages its own settings and features, e.g. routing protocols, management interfaces. 
+
+CoPP, then, focuses on protecting the CP from such attacks as DoS, packet flooding, resource exhaustion. CoPP works by controlling the traffic that reaches the control plane. Traffic gets classified by source IP, destination IP, protocols, etc. Depending on its details, a packet or group thereof may be set aside for analysis. CoPP also enforces rate limits, i.e. a certain number of packets in a given time frame. All of this keeps the control plane functioning properly, even during times of high traffic and instability.
+
+-Private VLANs?
+These are sub-VLANs, a VLAN within a VLAN. Isolated PVLANs allow devices therein to communicate with the wider VLAN, but not with each other. Community PVLANs allow devices therein to communicate with each other but not with devices in other Community VLANs or Isolated PVLANs. There is also usually a "promiscuous port" that can be used to communicate with all secondary VLANs within the primary VLAN. 
+
+-Disable unneeded switchports?
+Switchports are often an attack vector, so if you aren't going to need some of them it is best to disable them so they do not get exploited. It's important to document which ports are going to be used and which are going to be disabled. Then you would typically access the switch's management interface, can be GUI or CLI. It's important to audit/monitor the switch configuration over time in order to ensure the correct ports remain enabled or disabled.
+
+-Disable unneeded network services?
+Services are often attack vectors, so if you don't actually need one running then it is best to disable it. Again, documentation is going to be essential. Let the principles of access control and least privilege guide you, grant only just enough access for the job to get done. Some services are baked into the OS, others are added on. Obviously disable any inherently insecure protocols, e.g. Telnet. It is a good idea to configure ACLs and/or firewalls in addition to disabling the services, in case they should be re-activated for whatever reason. Run tests on your configuration, of course. Make sure you are doing ongoing auditing/monitoring. Backup and restoration policies/procedures for these services are important, in case they should ever go down.
+
+-Change default passwords?
+Default passwords are often public knowledge, ergo it is extremely insecure to continue using them after installing a device or service on the network. Some common default passwords: Admin/Admin, Root/Root; sometimes the default password is no password at all. In addition to traditional network devices (routers, switches, servers), it is also important to check default password configuration on network cameras, IoT devices, etc.
+
+-Password complexity/length?
+NIST has said that password length is far more important than complexity, hence passphrases. Nowadays, it is recommended that passwords be at least 40 characters. Password complexity isn't much of a consideration anymore, as attackers do not know whether any single character is a letter, number, or symbol.
+
+-Enable DHCP snooping?
+DHCP snooping is a network security technique that helps prevent rogue/unauthorized DHCP server attacks. To enable it, you can log onto the switch and use the GUI or CLI management interface.
+
+-Change default VLAN?
+The default VLAN is VLAN 1, for which no VLAN tag is used. You should fairly meticulously plan your new VLAN before making any changes, including documenting the port configurations and considering how the new VLAN may affect existing connections, if any. Once you are certain you are ready to move forward with the new VLAN, you should create a backup of your existing configuration in case any issues arise. Then you'll go into the management interface on the switch and actually make your changes. Finally, you should test your new configuration in a controlled environment to make sure there aren't any issues.
+
+-Patch and firmware management?
+Patches provide security as well as feature/functionality fixes. Hackers often target unpatched systems, so it is a good idea to apply them as soon as they are released. However, it is also important to test patches in a controlled environment, because they do sometimes cause things to break or become incompatible with the wider network. Automated patch deployment tools can be very useful because IT teams often do not have time to apply patches individually to all of their organization's devices. 
+
+Firmware can be thought of as low-level software for hardware, it lives on the device and allows it to carry out its functions. Firmware updates are important for reasons of security, compatibility (with other devices on network), performance, and bug fixes. What was said about patch management above also applies to firmware management.
+
+-Access control list (ACL)?
+A common tool used in operating systems and firewalls (to give just a few examples) to control access to various resources. In the case of an operating system, you might have an ACL on a folder in Windows that controls access to it and its contents, e.g. if a particular user wants to access that folder but they are not on the ACL, then they won't be able to. Traditional firewalls are actually glorified ACLs that control access to the network based on whether the source IP is on the allow list (ACL) or not.
+
+-Role-based access?
+A principle in IT and infosec that says that a user's role in the organization should determine their level of access to the organization's resources. For example, the IT team should have access to all or most of the technology used by the organization, but they should not have access to financial records (unless they interact directly with IT operations); instead, the Finance department should have access to the financial records, but not the technology.
+
+FIREWALL RULES
+
+-Explicity deny?
+A type of entry in a firewall ACL that explicitly states a certain IP address (or range thereof) is to be denied access to the network. Alternatively you could have a "deny all" statement.
+
+-Implicit deny?
+A type of entry (or, rather, non-entry) in a firewall ACL. With this type of entry, you would typically have one or several allowed source IPs, and then at the end no "deny" statement at all. This is the same as saying to allow only the entries on the ACL, and deny all others.
+
+WIRELESS SECURITY
+
+-MAC filtering?
+Aka Wireless access control, a whitelist or blacklist is configured with MAC addresses then MAC filtering has to be enabled on the WAP. Unfortunately, for larger and/or more complex networks configuring the lists can be cumbersome, and it would also have to be maintained. MAC filtering also adds a small amount of overhead to network device processing. Luckily, there are dynamic MAC filtering options available.
+
+-Antenna placement?
+Very important in wireless security, as having an antenna in the wrong place can leave it vulnerable to wireless attacks. Wireless site surveys and wireless network auditing/monitoring can be useful for figuring out placement. Signal strength can also play a role, as a stronger signal will extend further out, which may open up an attack surface. 
+
+-Power levels?
+Power levels on a WAP have a direct effect on how far out a signal will reach. Depending on your topography, you may need to be mindful of the power levels on your WAPs so that you don't open up an attack surface. Monitoring power levels can also help in detecting rogue access points. 
+
+-Wireless client isolation?
+Network security feature that prevents wireless clients in the same WLAN from communicating directly with one another. Instead, they have to go through the switch or WAP. This is to enhance privacy and security. WCI is commonly used in public wifi, guest networks, shared workspaces, etc. WCI can be enabled in the router or WAP's management interface.
+
+-Guest network isolation?
+Network security practice that involves creating a separate VLAN or subnet for guests in order to not give them access to the organization's primary network(s), where sensitive data and perhaps even servers reside. This is a good idea for reasons of security, privacy, and network performance. The guest network may use a captive portal.
+
+-Preshared keys (PSK)?
+These are keys/passwords that are shared ahead of time, i.e. there is no electronic exchange of keys going on as in PKI. A common example is when authorized users of a certain network are given the WAP password on a piece of paper, e.g. on the receipt at a coffee shop. Commonly used in SOHO networks due to their simplicity and lack of overhead.
+
+-EAP?
+Extensible Authentication Protocol, this is a framework that allows you to use multiple authentication protocols at the same time. Widely used in wireless networking, VPNs, etc. Common "EAP methods" (i.e. authentication protocols) include TLS and MSCHAP. 
+
+-Geofencing?
+A geofence is a virtual boundary defined by GPS, RFID, WiFi, cellular data, etc. (any technology with location awareness). Traversing these boundaries then elicits a certain action on a device, e.g. launching an app or sending a notification to the device. 
+
+-Captive portal?
+This is a webpage that commonly opens up when a user connects to a guest network, e.g. airport Wi-Fi. It often includes the AUP for the guest network, as well as a prompt for credentials (these are usually provided by the organization that hosts the guest network). After users have authenticated and/or accepted the terms of service, they are then redirected to the webpage or webapp they were originally attempting to access. 
+
+-IoT Access considerations?
+IoT devices are rather unique in the world of tech, they are often incredibly vulnerable to cyberattacks due to their lack of ability to receive updates, or simply the manufacturer's lack of providing updates. In order to secure these devices, it is important to use device certificates, secure APIs, etc. It is a good idea to create a separate VLAN for IoT devices to live in, or perhaps even a separate VLAN for each IoT device. You can then configure ACLs/firewalls for the device to communicate only as necessary. You should encrypt the IoT traffic. Physical security is an important consideration for IoT as these are physical devices connected to your network, so they can be hacked if someone gains access to it. 
+
+REMOTE ACCESS METHODS AND SECURITY
+
+-Site-to-site VPN?
+A VPN that connects two specific locations to one another. You might be a company with many branch offices and one headquarters, so you might establish a VPN connection between every branch office back to headquarters. The VPN would allow for secure, encrypted communication over the internet (which is an untrusted network if there ever was one). Common encryption protocols include TLS and IPsec. Discrete subnets may be configured for each VPN connection.
+
+-Client-to-site VPN?
+A site-to-site VPN connects entire networks/organizations to one another, whereas a client-to-site VPN connects a single user to a network/organization. The user will need to have a VPN client installed on their device(s). Split tunneling may be used to send sensitive information over the VPN connection and all other information over the internet. 
+
+-Split tunnel vs. full tunnel?
+Two different approaches to routing traffic through a VPN. As mentioned in the previous entry, split tunnel means part of the traffic (the sensitive information) goes through the encrypted tunnel and everything else just goes through the plain old internet (with some encryption of course, but not the same level thereof). The VPN client typically decides which packets will go through which channel. This is done for bandwidth optimization and load balancing, i.e. easing the load on the VPN gateways and servers. Security implications include the mixing of internal network data with general internet traffic, which is often insecure. 
+
+In full tunneling, all packets are routed through the VPN tunnel. This is advantageous from a security standpoint but it does put a lot of stress on the VPN architecture, which may or may not be worth it depending on the needs of the organization. Organizations that require deep network monitoring may choose full tunnel for the access to 100% of the traffic. 
+
+-Remote desktop connection?
+There are a variety of apps that provide this functionality, most notably RDP and VNC. In order to harden these systems as much as possible, one can implement authentication, encryption, network isolation, session timeouts, strong passwords, session timeout, MFA, logging and monitoring, etc. There is also the option to use a remote desktop gateway (see below). 
+
+-Remote desktop gateway?
+Aka Terminal Services Gateway (old Windows term), component of MS RDS suite that acts as a proxy/intermediary server that helps facilitate secure remote desktop connections. This server manages encryption, authentication, session initiation and termination, auditing and logging, etc.
+
+-SSH?
+Secure SHell, the gold standard of remote terminal connections. It employs encryption, authentication, PKI, port forwarding, logging and auditing by the SSH servers, etc. It includes utilities like SCP (Secure Copy Protocol) and SFTP (SSH File Transfer Protocol). It is recommended to disable root login (as well as any unused features) and log onto a user account with administrative privileges instead. 
+
+-Virtual network computing (VNC)?
+Technology that allows for remote desktop connections. By default VNC does not use encryption, ergo it is very important to use a secure variant of VNC, e.g. VNC over SSH or VNC over VPN. VNC typically utilizes password-based authentication, however it is recommended to use PKI and/or MFA as that is more secure. ACLs and/or firewalls are recommended so only trusted IP networks are able to connect. Change the default TCP port so that it isn't an easily findable target for hackers. 
+
+-Virtual desktop?
+VDI means Virtual Desktop Infrastructure. It is a technology that allows for the creation and management of virtual desktop environments on remote servers, which users can then connect to over the internet. Because in a VDI environment, multiple desktops run on the same server or cluster, it is important that the proper data isolation mechanisms are in place, otherwise other users might be able to access your data. Advantages of VDI include centralized management and convenience for end users, however it's important to make sure the proper security controls are in place.
+
+-Authentication and authorization considerations?
+Authentication is about verifying who you are; authorization is about granting a certain level of access to organizational resources based on who you are.
+
+-In-band vs out-of-band management?
+In-band means managing and monitoring network devices using the same channels that transmit production data to and from those devices. IB management offers simplicity, and cost-effectiveness as there is no need to set up and/or maintain additional communication channels. Disadvantages of IB management include network vulnerability (both production data and management data will be compromised if a successful attack occurs) and traffic congestion. 
+
+OOB management involves a physically separate channel of communication to the production data. It may even use different protocols than the production channel. It is used in instances where security and reliability are crucial, e.g. data centers, telecom facilities, NOCs, etc. It is more secure, reliable, and fault-tolerant as any network issues will not carry over into production. Disadvantages include complexity, lack of cost-effectiveness, and overhead.
+
+PHYSICAL SECURITY
+
+DETECTION METHODS
+
+-Camera?
+Often part of a larger security system that includes VMS (Video Monitoring Systems), analytics software, and access control systems. Many modern cameras come with built-in analytics software and AI, which allows them to detect actual, attempted, or potential intrusions and notify the proper authorities, as well as log the event. It is important to remember that cameras, especially if connected to the network, can be hacked and therefore it is important to secure them as much as possible, physically and as far as firmware, etc. 
+
+-Motion detection?
+Detects and responds to physical movements or changes within a defined area. Motion detection systems typically consist of motion sensors, cameras, alarms, and software for monitoring and analysis. There are various different subtypes of sensors: infrared (detects heat signatures), ultrasonic (use sound waves to detect motion by bouncing sound waves off objects and analyzing reflections for changes), microwave (emit microwave signals and analyze reflections), video motion detection (use cameras to detect changes in video frame). Modern cameras may use advanced analytics and AI to differentiate between normal and abnormal movement, in order to reduce false alarms. These devices often keep logs and produce reports on motion events. 
+
+-Asset tags?
+Physical labels or tags that are placed on IT assets, e.g. computers, servers, routers, etc. The tags are used to identify and track assets within an organization's inventory. The tag contains some type of identifying information, e.g. serial number, barcode, QR code, RFID chip, etc. The tag can also include information about the device's maintenance history, warranty details, service requirements, etc. Asset tags are often required for compliance with regulations and standards. Some asset tags are tamper-evident for added security. Tags are often integrated with IT asset management software.
+
+-Tamper detection?
+Measures and technologies used to detect and respond to unauthorized access, tampering, or physical attacks on IT assets, infrastructure, or security systems. In such a situation, tamper detection would alert the IT admins and/or the leaders of the organization. Can include sensors, alarms, cameras, access control devices, and software for monitoring and alerting. There are physical tamper sensors, vibration and shock sensors, IDSes, video surveillance, seals and enclosures, etc. Tamper detection is often integrated with the organization's larger security systems. Organizations should have predefined responses to these alerts, in the case that there is an incident.
+
+PREVENTION METHODS
+
+-Employee training?
+Non-tech members of an organization are often targets for hackers as they generally know significantly less about IT security than tech staff. Lateral movement is often the next step, which is often successful in escalating privileges and then launching attacks with those permissions. Other types of attacks include phishes and ransomware---security really is everybody's responsibility!
+
+-Access control hardware?
+Example: access control vestibule. This type of hardware helps in preventing physical attacks. 
+
+-Badge readers?
+An essential component in virtually every organization's physical security (unless they are entirely virtual), badge readers greatly mitigate the ability of a physical attacker from entering the organization's physical property. They can be hacked of course, using at least a few different methods, but for the most part they do help protect the building.
+
+-Biometrics?
+Another incredibly valuable device in physical security, most likely harder to fool than a simple badge reader as it scans for specific physical features on bodies of the organization's members, e.g. retinal scan, fingerprint scan. It is still possible to fool these systems in one way or another, but in general they are more secure than badge readers. 
+
+-Locking racks?
+Server cabinets/racks with locks, for added security. Can use a key, combination, keypad, or even a biometric scanner. In addition to protecting networking equipment from theft, locking racks can also have safeguards against dust, debris, electromagnetic interference (EMI), radio-frequency interference (RFI), etc. Some locking racks may have remote monitoring and management capabilities. 
+
+-Locking cabinets?
+See the previous entry.
+
+-Access control vestibule (mantrap)?
+These are physical access control devices, usually the way they work is to allow only one person at a time to enter a restricted area, in order to prevent tailgating and/or piggybacking. Typically has two doors: one connected to the unsecured area, and one leading out to the secured area. A mantrap is a type of ACV that locks its doors when someone enters, the doors only unlock after the person has been authenticated. 
+
+-Smart lockers?
+These are storage units equipped with electronic access control equipment, designed to store IT devices. They are usually connected to inventory software in order to keep track of what is being used and by whom. 
+
+ASSET DISPOSAL
+
+-Factory reset/wipe configuration?
+This means reverting the device to as close as possible to its original state when it was shipped from the factory. Wiping the data involves overwriting existing bits with random 0s and 1s, which makes it difficult but not impossible to recover the data that was there before. 
+
+-Sanitize devices for disposal?
+Process of erasing all configurations and data from a device, in order to prevent unauthorized access. Different sanitization methods may be appropriate depending on the sensitivity of the data on the device. There are many third-party tools that can perform factory resets and/or wipe drives, and some OSes come with built-in tools for performing factory resets. It is important to verify afterward that the drive has actually been wiped, one method you can use to do this is data recovery tests. 
+
+NETWORK TROUBLESHOOTING
+
+IDENTIFY THE PROBLEM
+
+-Gather information?
+
+-Question users?
+
+-Identify symptoms?
+
+-Determine if anything has changed?
+
+-Duplicate the problem, if possible?
+
+-Approach multiple problems individually?
+
+ESTABLISH A THEORY OF PROBABLE CAUSE
+
+-Question the obvious?
+
+-Consider multiple approaches?
+
+-Top-to-bottom/bottom-to-top of OSI model?
+
+-Divide and conquer?
+
+TEST THEORY TO DETERMINE CAUSE
+
+-If theory is confirmed, determine next steps to resolve problem?
+
+-If theory is not confirmed, re-establish a new theory or escalate?
+
+-Establish plan of action to resolve the problem and identify potential effects?
+
+-Implement the solution or escalate as necessary?
+
+-Verify full system functionality and, if applicable, implement preventive measures?
+
+-Document findings, actions, outcomes, and lessons learned?
+
+TROUBLESHOOT COMMON CABLE CONNECTIVITY ISSUES
+
+SPECIFICATIONS AND LIMITATIONS
+
+-Throughput?
+In contradistinction with bandwidth, which is how much data can *theoretically* travel across a network, throughput is the *actual* amount of data that a network can process at a given point in time. Throughput can be hindered by factors such as capacity of network cables, CPU processing power, read/write speeds of storage devices, available memory, etc. Network congestion can also slow down throughput, as can latency. Network protocols and services can slow it down, QoS prioritization as well. In wireless networks, signal attentuation and/or distance from the WAP can lower throughput. Security measures can slow down a network, e.g. encryption. 
+
+-Speed?
+Many factors can affect transmission speeds, including age and quality of hardware, distance (even in wired connections, signals degrade over long distances), contention ratio (number of users sharing same bandwidth) in cable or DSL, ISP limitations (higher for large businesses than for SOHO), and more.
+
+-Distance?
+In wired and wireless networks, distance can and does affect speed. In wired connections, signals still lose their strength the further they travel. In wireless networks, obviously the wireless signals only go out so far, especially if there are obstructions in the path. Fiber cables can transmit signals over greater distances than copper, but still have their own limitations. Environmental factors---such as interference, noise, humidity, and temperature---can also degrade signals. Devices such as repeaters, extenders, optical amplifiers, and signal boosters can be used to keep the signal alive. 
+
+CABLE CONSIDERATIONS
+
+-Shielded and unshielded?
+STP means shielded twisted pair, FTP means foiled twisted pair. Shielded cables have an additional layer of shielding around the inner conductors, usually made of foil or braided metal; this is to protect it from EMI and RFI. Because of the additional shielding, these cables tend to be more expensive. They can be less flexible and more bulky. 
+
+UTP are more readily available and less expensive. 
+
+-Plenum and riser-rated?
+Designed to reduce the risk of fire spread in a building. A plenum is an area in a building designed for air circulation, and that is exactly where plenum cables go. Plenum cables have special insulation and jacketing such that they do not emit very much smoke and are less toxic than standard cables, in the case that they do catch on fire. 
+
+A riser is a vertical shaft or conduit that connects different floors or levels of a building, allowing cables and pipes to traverse the floors. There is a lower risk of fire and smoke spreading between riser shafts compared to plenum spaces. Riser-rated cables have fire-retardant components, such as the jacket and insulation; they are designed to prevent fires from spreading between floors of the building. 
+
+CABLE APPLICATION
+-Rollover cable/console cable?
+The console cable connects to the console or serial port of a networking device, e.g. switch or router. It allows you to access the management interface using a terminal emulator or a GUI. This is an out-of-band management method, which means that even if the standard management lines are down, IT admins can still use console cables to manage network devices. Examples of terminal emulation software: PuTTY, HyperTerminal, Minicom. The transmit pins on this cable connect to the receiver pins on the other end.
+
+-Crossover cable?
+Crossover cables are used to connect two devices of the same type, e.g. a switch and a switch, a laptop and a router. Basically switches are the only device that is going to have a different pin layout, versus computers and routers. One of the most common uses of this cable is to connect two computers directly together. In theory, crossover cables are not needed anymore because devices are able to auto-detect what type of cable is being used and adjust input/output accordingly, but this feature may not always work; ergo, it is recommended to use a crossover cable for purposes of fault tolerance. Crossover cables can also be used to connect to management/serial/console ports on networking equipment in order to access the management interface. 
+
+-Power over Ethernet (PoE)?
+802.3af: simplifies network installations because a single cable can be used for power and data transmission. Common applications include VoIP, WAPs, IP cameras, IoT devices, network switches, and more. 
+
+COMMON ISSUES
+
+-Attenuation?
+Signal loss over distance, or due to obstructions in the case of wireless signals. In wired connections, low-quality media can cause loss/degradation of the signal. EMI and RFI are considerations with wired and wireless signals, hence shielded cables and multiple transmission frequencies. In fiber connections, factors such as light dispersion come into play.
+
+-Interference?
+Mostly a problem in wireless networks after the advent of network switches, before that there was CSMA/CD. Wireless signals can interfere with one another, especially if they are at the same frequency. Interference by other factors are also possible, e.g. EMI and RFI, even the weather. Crosstalk is another form of signal interference, it can occur if cables aren't properly insulated and/or twisted. Jamming is when an attacker floods a network with noise and/or signals in order to prevent data transmission. 
+
+-Decibel (dB) loss?
+Reduction in signal strength or power as signals travel through a network; a measure of signal attenuation. Positive dB values indicate signal loss, negative values indicate signal gain. In fiber cables, bend radius and splice losses must be taken into consideration. Each component in the network introduces a level of dB loss. 
+
+-Incorrect pinout?
+The wires in a network cable do not connect to the correct pins on one or both ends of the cable. This can cause connectivity issues, data transmission issues, and even damage to networking equipment. This can occur from human error (e.g. during crimping), manufacturing error, and/or cable damage. Cable testers and other such tools can be used to ensure everything is as it should be before installation.
+
+-Bad ports?
+Network port on a networking device that isn't functioning as it should. The symptoms are pretty obvious and do not need to be listed here. Causes include physical damage, electrical damage, hardware (manufacturing) defects, overloading (overheating, too much data, too much electrical power), corrosion and contamination, software or firmware issues, etc. You can troubleshoot with cable testers and other such tools, as well as port diagnosis tools in the CLI or GUI. 
+
+-Open/short?
+An open is a disruption in a cable such that many of the connections are lost. Obviously this would engender signal loss. 
+
+A short is when there exist unintended connections between the wires in the cables, this can be because of an open in the cable or it can happen internally. Short circuits can cause electrical interference and data corruption. Cable repair may be possible in some cases, a continuity tester and/or a cable tester can be useful for diagnosing.
+
+-Light-emitting diode (LED) status indicators?
+These provide visual indication of the status of network devices. Generally, if the power light is on and green then the device is up and running correctly. The link state LED might be green or amber, both generally indicate the device is functioning correctly. These lights may blink at different rates to indicate data is being transmitted to/from it, and at what rate. 
+
+-Incorrect transceivers?
+Optical or electrical transceiver modules that do not match the specifications of the networking equipment. Transceivers convert electrical signals into optical signals, or vice-versa. Transceivers must be compatible with the networking equipment to which they are affixed.
+
+-Duplexing issues?
+Refers to the communicated mode used for data transmission between two devices (half-duplex or full-duplex). If both endpoints, as well as any intermediary devices, are not configured for the same mode, it can cause issues. Autonegotiation is a very useful feature because it allows devices to decide their own mode of communication. However, it is important to keep in mind that autonegotiation may not always work. 
+
+-Transmit (TX) and Receive (RX) reversed?
+TX and/or RX wires or ports have been swapped. Can occur in ethernet, fiber, or serial connections. For ethernet and/or TP cables, cable testers and other such tools can help in diagnosing reversed pinouts. In fiber cables, you can use optical power meters or OTDRs. 
+
+-Dirty optical cables?
+Can prevent light signals from being read or transmitted correctly. The dirty, debris, or other material can be in the core of the cable or on the connectors. Connectors should be cleaned, but not excessively as that can also cause damage. Optical connectors should be covered with their protective caps when not in use. 
+
+COMMON TOOLS
+
+-Cable crimper?
+
+-Punchdown tool?
+
+-Tone generator?
+
+-Loopback adapter?
+
+-Optical time-domain reflectometer (OTDR)?
+
+-Multimeter?
+
+-Cable tester?
+
+-Wire map?
+
+-Tap?
+
+-Fusion splicers?
+
+-Spectrum analyzers?
+
+-Snips/cutters?
+
+-Cable stripper?
+
+-Fiber light meter?
+
+NETWORK SOFTWARE TOOLS AND COMMANDS
+
+SOFTWARE TOOLS
+
+-WiFi analyzer?
+Physical tool or software to assess and optimize wireless network performance. Provides detailed information such signal strength, channel utilization, interference sources, network security, and more. Can also provide SSID, BSSID (MAC address), encryption type, signal quality. 
+
+-Protocol analyzer/packet capture?
+Software or hardware tool used for capturing network packets and analyzing their contents. This tool can sniff traffic as it is passing through the network, or it can use captured/saved packets. Netadmins use this type of tool to troubleshoot network issues, e.g. slow performance, connectivity problems. Network security professionals use it to investigate possible breaches, malware infections, etc. Protocol analyzers support a wide variety of network protocols: Ethernet, IP, TCP/UDP, HTTPS, DNS, DHCP, etc. Capture filter can be used to capture only packets that meet certain criteria, e.g. DNS traffic, or packets with a specific destination IP. 
+
+-Bandwidth speed tester?
+Software or web-based app that measures the speed and performance of an internet connection. Can measure upload speed, download speed, latency, packet loss. 
+
+-Port scanner?
+Software tool or app used to scan for open ports on network devices. Can be used to discover network services, vulnerabilities, and potential entry points into a network. Examples of ports that me discovered during a scan: TCP port 80 (HTTP), TCP port 22 (SSH). Netadmins may use port scanners to ensure network services are up and running, as well as to discover any potential vulnerabilities so that they can take remedial action. Unauthorized port scanning is often illegal. 
+
+-iperf?
+Open-source CLI tool used to measure the performance and throughput of TCP and UDP data streams. Primarily used for performance tests on LANs and WANs; measures throughput, latency, packet loss. Uses server-client architecture where the server listens to the transmissions sent by the client. Can be used in shell scripts as well as other automation tools. 
+
+-NetFlow analyzers?
+Network management and monitoring tool used to collect and analyze NetFlow data exported by network devices. It is a network protocol developed by Cisco that analyzes traffic patterns and produces findings based upon results, e.g. most common destination for network packets, traffic volume, top "talkers". 
+
+-Trivial File Transfer Protocol (TFTP) server?
+Simple file transfer protocol used for transferring files within a network, often used for storing and transmitting configuration files, firmware updates, and boot files for network devices. Operates over UDP port 69, lacks the security features (authentication) of similar protocols such as FTP or SFTP. TFTP clients and servers can use various OSes. TFTP is not suitable for large file transfers or where security features such as authentication or data integrity are required. 
+
+-Terminal emulator?
+Software that allows for connecting to an external device using a terminal. Often used for connecting to network devices, such as switches and routers, in order to access their management interface. Often used for remote management of network devices, including servers. TEs support SSH (recommended), Telnet (NOT recommended), serial connections, and more. Examples: PuTTY, Konsole, xterm, Windows Terminal, PowerShell.
+
+-IP scanner?
+Aka network scanner, used to discover devices on a network and collect information about them, e.g. IP address, open ports, MAC address, manufacturer information, operating system, etc. IP scanner uses techniques such as ping sweeps or ARP scans to discover online devices. In IT security, scanners can also be used to identify unauthorized/rogue devices on the network. 
+
+COMMAND LINE TOOL
+
+-ping?
+Network utility used to test whether an IP host is up, running, and responsive; uses ICMP packets. A failed ping can point to many network issues, or even issues with the host itself (e.g. if it is a Windows machine, it may need to be updated).
+
+-ipconfig/ifconfig/ip?
+Command used to display information about the IP configuration of the host. ifconfig used to be the command on Linux, but now it is deprecated. Various switches can be appended to the command to view different sets of information, e.g. "ipconfig /all" on Windows returns detailed information about the IP configuration.
+
+-nslookup/dig?
+
+"Name server lookup", nslookup is used in Windows systems to retrieve DNS information from the DNS server, while bypassing DNS resolution. This is useful in case the DNS cache on the localhost is inaccurate, for whatever reason. 
+
+"Domain information groper", dig is used in Unix-like systems (including macOS and Linux) to retrieve information about the DNS configuration from the DNS server. It has many switches that can be appended to the command in order to retrieve different kinds of information.
+
+-traceroute/tracert?
+Terminal command used to follow the path a network packet travels in reaching its destination. Tracert output includes every hop along the way, as well as the time elapsed between hops. 
+
+-arp?
+Address resolution protocol, displays the current ARP table on the localhost and allows you to manage it. 
+
+-netstat?
+A very versatile command, its most obvious use is to display the ports on the localhost and their state, as well as any connections to them. Netstat can also display the routing table, as well as all physical and virtual interfaces. It can also perform continuous monitoring, sending updates when there are network changes. 
+
+-hostname?
+Used to display the hostname of the localhost.
+
+-route?
+Used to display and manage the localhost's routing table. 
+
+-telnet?
+Used for remote terminal access to a host, however since everything gets transmitted in cleartext it is NOT recommended. SSH is a much more secure alternative. 
+
+-tcpdump?
+CLI tool used for packet capture and analysis. Supports various network protocols: TCP, UDP, ICMP. Users can specify the network interface from which to capture packets. Can read PCAP files generated by itself or other sniffers. Primarily associated with Unix-like systems, although there is a similar tool for Windows called Windump. 
+
+-nmap?
+Network mapper, CLI tool used for network scanning and mapping. Uses various protocols such as ARP and ICMP to discover hosts on a network and gather information about them. NSE (Nmap Scripting Engine) allows users to write custom scripts and run them for network discovery. You should be careful when using this tool as it may be illegal to do so, depending on the target network or host.
+
+BASIC NETWORK PLATFORM COMMANDS
+
+-show interface?
+Displays information about a particular interface on a switch or router. In addition to configuration information, can also show statistics such as packets transmitted and received, error counts, bandwidth capacity and use. 
+
+-show config?
+Used to display detailed network device configuration information, including interface config, routing configuration, security settings, device settings, QoS policies, VPN/tunneling, DHCP, DNS, and more.
+
+-show route?
+Used to display routing table on network devices. The routing table includes detailed information, such as route type, administrative distance, metric, next hop information, default route, etc. 
+
+TROUBLESHOOT WIRELESS CONNECTIVITY
+
+SPECS AND LIMITATIONS
+
+-Throughout?
+
+-Speed?
+
+-Distance?
+
+-Received signal strength indication (RSSI)?
+Measurement of the power level of a received wireless signal, usually expressed in dBm. RSSI is typically represented in negative values, with a value closer to zero being a stronger signal. Example: -50 dBm is a stronger signal than -100 dBm. Unfortunately, RSSI does not provide information about signal quality, for that you can use other metrics such as SNR (signal to noise ratio) or MCS (modulation and coding scheme). 
+
+-Effective isotropic radiated power (EIRP)?
+The total power that a wireless networking system radiates from an antenna, factoring in the output power and antenna's gain. 
+
+CONSIDERATIONS
+
+-Antennas?
+There are different types of antennas, because wireless networks are relatively easy to hack, this is going to be an important factor. You need to decide whether you need an omnidirectional or directional antenna, as well as how much output power you will need to cover your entire site. 
+
+-Placement?
+This is going to be very important to avoid the network getting attacked by wardrivers and such, you need the right placement and type (omnidirectional, directional) to cover your entire site but not so much coverage that there is signal leakage.
+
+-Type?
+Omnidirectional, directional, parabolic, Yagi, patch, helical, whip, dipole, etc.
+
+-Polarization?
+Refers to the orientation of the electric field in an electromagnetic wave produced or received by the antenna. There can be vertical polarization or horizontal polarization. When antennas with different polarization orientations communicate, there can be signal degradation due to polarization mismatch. RHCP is Right-Hand Circular Polarization, where the electric field rotates to the right as the signal propagates; LHCP is the left-hand variant of this. 
+
+-Channel utilization?
+Using RF channels that are too close together can cause signal interference. For the 2.4 GHz frequency band, channels 1, 6, and 11 are recommended as there is little to no interference among them and you can set up 3 channels this way. 
+
+-AP association time?
+The amount of time it takes for a wireless client to establish a connection and be associated with a WAP. The general steps are Scanning, Network Discovery, Authentication, and Association. 
+
+-Site survey?
+Evaluation of a physical site in preparation for installing a network there. It evaluates all aspects of the site that could have any effect on the network.
+
+COMMON ISSUES
+
+-Interference?
+Can be an issue in wired or wireless networks, which is why shielded cables exist. Interference can be RFI or EMI, also from the weather. In wireless networks, signal interference can occur from other devices using the 2.4 GHz frequency, which is many devices. 5 GHz frequency band is used by far fewer devices, but comes with own challenges. 
+
+-Channel overlap?
+A situation where the wireless channels used by two or more neighboring WAPs overlap fully or partially with one another in the RF spectrum. This can cause signal interference for both WAPs. The 5 GHz frequency band offers far more non-overlapping channels than the 2.4 GHz band. You can use a spectrum analysis tool to identify channel overlap and signal interference. 
+
+-Antenna cable attenuation/signal loss?
+Reduction in the strength of a signal as it travels from an antenna down through the cable, e.g. to a WAP or a radio transceiver. 
+
+-RF attentuation/signal loss?
+Wireless signals propagate in all directions as they travel outward from their source. Even if there were no obstacles in the way, eventually the signals would disperse so as to become unreadable, which is why WAPs generally only have a coverage area of around 100 feet. 
+
+-Wrong SSID?
+A situation wherein a client device is attempting to connect to a WAP using the wrong SSID. This would obviously prevent the client device from establishing a connection with the WAP.
+
+-Incorrect passphrase?
+This would prevent a client device from successfully associating itself with a WAP.
+
+-Encryption protocol mismatch?
+Occurs when there is a mismatch between the encryption protocol used by the WAP and the prospective client. Usually this will prevent the client from associating with the WAP altogether, however depending on configuration they may negotiate and decide to use a less secure protocol; this, in turn, can be highly insecure as the traffic can be intercepted and most likely decrypted, e.g. if they decide to use WPA instead of WPA2.
+
+-Insufficient wireless coverage?
+A situation in which a wireless network does not provide enough signal strength and/or coverage to meet the demands of its users. This can engender connectivity problems, slow connection speeds, dropped connections, etc. This can be caused by distance, obstacles, interference, low signal strength, or too many users. 
+
+-Captive portal issues?
+Session expiry, incompatible devices, OS behavior, browser cache, JavaScript dependencies, network overload, portal server failures, etc.
+
+-Client disassociation issues?
+Disruptions in the association/connection between a wireless client and its WAP. Can occur because of signal weakness, interference, inefficient roaming, handover failures, authentication failures, encryption mismatches, aggressive power saving, outdated drivers and/or firmware, bugs, channel congestion, AP overload, etc.
+
+TROUBLESHOOT GENERAL NETWORKING ISSUES
+
+CONSIDERATIONS
+
+-Device configuration review?
+Evaluation and analysis of the configuration and settings of network devices. The objective is to assess the device(s) for correctness, security, performance, and compliance. 
+
+-Routing tables?
+Dynamic routing protocols are generally reliable, but there may be cases where the protocol makes mistakes. You can always configure static routes or you can make static entries in a routing table, which will have an administrative distance of 0 by definition. 
+
+-Interface status?
+Can be checked by the link lights or in the management interface. Sometimes interfaces may be administratively down, or just down for some other reason. As always, it is a good idea to start at Layer 1 of the OSI model and work your way up when troubleshooting; we start with Layer 1 because it is generally the least complicated and encompasses all of the layers above it. 
+
+-VLAN assignment?
+General steps: review VLAN configuration, check port configuration, verify VLAN tagging, check VLAN membership, troubleshoot inter-VLAN routing, check for VLAN overlaps, etc. 
+
+-Network performance baselines?
+Involves comparing current network performance to its documented baseline. Baseline metrics can include bandwidth utilization, latency, packet loss, error rates, etc. Collaboration among different IT teams in the organization may be necessary, e.g. server, support, cloud.
+
+COMMON ISSUES
+
+-Collisions?
+Occurs mostly in CSMA/CD networks, before the advent of switches. Cables were shared and so only one device could transmit at a time, otherwise packets would collide into one another.
+
+-Broadcast storm?
+Occurs when too many broadcast packets are going out onto the network. Packets will collide and become undeliverable, causing the network to go down. This can happen by accident or be deliberately provoked by an attacker.
+
+-Duplicate MAC address?
+Can occur by accident or as part of MAC spoofing. No two devices on the planet should share the same MAC address, ergo if two devices on the same network do, it is going to cause issues. Since Layer 2 networking relies on MAC address for packet delivery, this is the OSI layer that is going to be most affected. Potential issues: ARP, network congestion, broadcast storms, security risks, IP address conflicts, network services issues, etc. 
+
+-Duplicate IP address?
+Can occur by accident or as part of IP spoofing. Static IP or dynamic IP can both create duplicates, by human error or by some DHCP bug. Potential issues: IP address conflict, communication errors, DHCP conflicts, security risks, failure of network services, etc. 
+
+-Multicast flooding?
+A situation in which multicast traffic is sent to all hosts on a network segment, regardless of whether they are in the multicast group or not. While this may seem like it is inherently an error, sometimes multicast flooding is used when network hardware does not natively multicast transmissions. In such a case, multicast flooding is used in lieu to get the packets out to all the destination hosts. 
+
+-Asymmetrical routing?
+Occurs when the outbound and inbound paths for a network transmission do not follow the same path. This can happen if a network is configured to perform load balancing or to use redundant paths. Other possibilities include provider-based routing (e.g. cloud provider or ISP), as well as policy-based routing (QoS or security policies). Firewall and NAT often use a stateful approach, and if they detect asymmetrical routing, they could drop the packets. Packet reordering is also possible, which occurs when packets arrive out of order and must be reassembled in the correct order, which introduces a lot of overhead. Asymmetrical routing can also introduce security risks, since it makes it harder to detect and attack.
+
+-Switching loops?
+These occur when there is more than one path to the destination in a network, and then these paths create a loop. Can lead to broadcast storms, network congestion, and even complete network failure. Switching loops occur in networks with redundant paths configured, which can help enhance reliability but also introduce loops. STP and RSTP are an excellent measure against switching loops, they are protocols designed specifically for this, with RSTP being the Rapid version of the Spanning Tree Protocol. Configuring VLANs can also prevent network failure due to the segmentation of the network.
+
+-Routing loops?
+This occurs when routers incorrectly learn about multiple paths to a destination and make erroneous decisions about how to choose the best path(s). Possible causes: routing protocol inconsistency among network routers, count-to-infinity problem, incorrect configuration. Prevention methods: link-state routing protocols, route summarization, routing policies, etc.
+
+-Rogue DHCP server?
+This is usually a cyberattack in which a device connects to the network and advertises itself as the DHCP server. It intercepts DHCP broadcasts and replies to them with its own IP addressing information, which can then be used for various purposes, e.g. packet interception, packet sniffing, etc.  Additionally, the DHCP server may assign a fraudulent DNS server, which may in turn use fraudulent DNS records to redirect DNS clients to malicious sites controlled by the same group.
+
+-DHCP scope exhaustion?
+A DHCP scope is a range of IP addresses that can be assigned to DHCP clients. Exhaustion can occur if there are more DHCP clients than there are host IP addresses in the DHCP scope. Other causes include excessive lease times, as well as dynamic and static IP address mixing. 
+
+IP SETTING ISSUES
+
+-Incorrect gateway?
+An incorrect gateway will prevent LAN devices from communicating with other LANs, including the internet. 
+
+-Incorrect subnet mask?
+An incorrect subnet mask will cause the client to appear to be in a different LAN than it actually is, which will in turn prevent it from communicating with any devices outside of its LAN. 
+
+-Incorrect IP address?
+This will prevent the host from receiving or transmitting any traffic from or to outside its LAN.
+
+-Incorrect DNS?
+This will cause the DNS client to incorrectly resolve names to IPs, or vice-versa. Alternatively, it may not be able to resolve the name at all.
+
+-Missing route?
+This will cause the source, presumably a router, to either have to use a different route or not be able to transmit at all. 
+
+-Low optical link budget?
+A situation in which the optical power budget is insufficient for reliable data transmission over a specific optical connection. The optical link budget determines the maximum distance or reach of an optical connection. A low link budget indicates can lead to signal and communication issues. Potential causes: long distance, high fiber loss, multiple connectors and splices, aging components. Consequences of low optical link budget: reduced reach, reduced data rates, increased errors. 
+
+-Certificate issues?
+Digital certificates are used to ensure the authenticity and security of websites. Possible issues: expired certificates, misconfigured certificates, revoked certificate, self-signed certificates, expired CA certificates, etc.
+
+-Hardware failure?
+Common issues: NIC failure, NIC driver problems, switch or router failure, cable or physical connection issues, power outages and hardware reboots, hardware exhaustion, firewall or security device failure, load balancer failure, memory or storage failure, etc.
+
+-Host-based/network-based firewall settings?
+Host-based firewalls allow or filter traffic based partly on source and destination IP. If the IP address on the host isn't configured correctly, or that of the source/destination, that could cause connection issues. 
+
+Network-based firewalls: ACLs, NAT/PAT, stateful inspection, etc. These can all cause issues if not properly configured.
+
+-Blocked services, ports, or addresses?
+Can lead to connectivity and connection issues: blocked services, firewall rules, application layer filtering. Some IP addresses or even address ranges may be blocked for security reasons, e.g. to prevent DDoS attacks from known attacker networks. Geolocation blocking is another possibility, e.g. Russia or China. To avoid erroneously blocking any of the above, you should review firewalls, ACLs, whitelists, etc.
+
+-Incorrect VLAN?
+Possible causes: misconfigured switchports, human error, lack of documentation. Issues: loss of connectivity, IP address conflicts, security risks, subnet mismatch. 
+
+-DNS issues?
+If the correct DNS server isn't assigned (usually as part of DHCP configuration), this can cause the DNS client to not be able to perform recursion for name resolution. Alternatively, if the DNS records aren't correct, or if there is a problem with the DNS server itself, the DNS client(s) may not have the correct IP addresses in the DNS records; additionally, the DNS clients may not be able to perform recursion either.
+
+-NTP issues?
+If network devices have NTP issues (either locally are from the server), it can issues: authentication failure, logging and event correlation, cryptographic protocol failure (e.g. TLS), difficulty performing network diagnostics. How to prevent NTP problems: use reliable NTP sources, implement redundancy, monitor NTP traffic, NTP authentication, update and patch NTP.
+
+-BYOD challenges?
+User devices may not meet the security or hardware requirements for connecting to the organization's network, in which it will not be assigned IP addressing settings from the DHCP server. The hardware on the device may not be functioning properly, e.g. the NIC is damaged or nonfunctional, or the driver for it is outdated, and the user can't connect to the network. 
+
+-Licensed feature issues?
+Refers to a specific software or feature therein that requires a purchase or paid subcription to use. If a user doesn't have a license for, say, ExpressVPN, then they won't be able to install the app and connect to a VPN server in order to mask their IP address. 
+
+-Network performance issues?
+If the network isn't functioning properly, that could cause many issues; including inability to obtain an IP address, or to be able to reach devices by IP address. Most networks rely on DHCP for their addressing, and DHCP requires a fair number of packets to travel across the network in order for adresses to be requested, offered and accepted. There are not only unicast packets involved in this process, but also broadcast packets. Therefore it follows that the network must be fully functional for this process to be carried out effectively.

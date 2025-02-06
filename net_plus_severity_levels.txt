@@ -1,0 +1,17 @@
+The severity levels range from zero to seven, with zero being the most severe and seven being the least severe. 
+
+Level 0 is used for an emergency and is considered the most severe condition because the system has become unstable. 
+
+Level 1 is used for an alert condition and means that there is a condition that should be corrected immediately. 
+
+Level 2 is used for a critical condition, and it means that there is a failure in the system’s primary application and it requires immediate attention. 
+
+Level 3 is used for an error condition, and it means that something is happening to the system that is preventing the proper function. 
+
+Level 4 is used for warning conditions and it may indicate that an error will occur if action is not taken soon. 
+
+Level 5 is used for notice conditions and it means that the events are unusual, but they are not error conditions. 
+
+Level 6 is used for information conditions and it is a normal operational message that requires no action. 
+
+Level 7 is used for debugging conditions and is just information that is useful to developers as they are debugging their networks and applications.
